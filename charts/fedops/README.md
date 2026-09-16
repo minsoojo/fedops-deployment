@@ -2,7 +2,7 @@
 
 2026-09-16 · Chart 0.1.0 · 기존 FedOps를 F 단일 노드에 새 데이터로 설치하기 위한 최소 구성.
 
-**현재 완료: Chart 정적 검증, 앱 6종 로컬 빌드·기동, Web SDK의 로컬 MinIO 왕복.** [이미지 기록](../../README.md). 게시된 앱 digest·Task Runtime 연결·F 설치/FL 검증은 남아 있다. `values.yaml`의 앱 이미지·F 입력은 의도적으로 비어 있어 입력 전 렌더링이 실패한다. `tests/static-values.yaml`은 존재하지 않는 주소/이미지를 사용하는 검사 전용 파일이다.
+**현재 완료: Chart 정적 검증, 앱 6종 빌드·기동·Docker Hub 게시/digest 대조, Web SDK의 로컬 MinIO 왕복.** [이미지 기록](../../README.md). Task Runtime 연결·F 설치/FL 검증은 남아 있다. `values.yaml`의 앱 이미지·F 입력은 의도적으로 비어 있다. 실제 F 값 파일 뒤에 [게시 이미지 설정](examples/images-minsoojo.yaml)을 덧씌워 사용하며 `fedops-registry-pull` Secret은 해당 namespace에 준비해야 한다. `tests/static-values.yaml`은 존재하지 않는 주소를 사용하는 정적 검사 전용 파일이다.
 
 [전체 계획](../../README.md) · [실행·이미지 명세](../../README.md) · [검증 기록](../../README.md)
 
@@ -115,4 +115,4 @@ python -B charts/fedops/tests/verify_chart.py
 
 검증 도구·공식 스키마 확보 방법과 결과는 [검증 기록](../../README.md)에 있다. Helm template 결과는 실제 클러스터 admission·설치·통신 검증을 대신하지 않는다.
 
-다음은 앱 이미지 게시와 Task Runtime 패키지 연결이다. 이후 F 전용 context·신규 Secret·디렉터리·버킷·기반 네트워크를 확인한 설치 가이드를 작성한다. 로컬 빌드·기동은 완료했고 레지스트리 게시·F 설치 명령은 실행하지 않았다.
+다음은 Task Runtime 패키지 연결이다. 이후 F 전용 context·신규 Secret·디렉터리·버킷·기반 네트워크를 확인한 설치 가이드를 작성한다. 앱 이미지 게시·원격 digest 대조는 완료했고 F 설치 명령은 실행하지 않았다.

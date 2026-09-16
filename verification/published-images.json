@@ -1,0 +1,96 @@
+{
+  "repository": "docker.io/minsoojo/fedops-onprem",
+  "images": {
+    "backend": {
+      "localTag": "fedops-local/backend:onprem-20260916",
+      "localImageId": "sha256:47a40b68f04ee83e988cd54f2647d02cabc5f6eb65371c28c94c1733dc218d23",
+      "tag": "docker.io/minsoojo/fedops-onprem:backend-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:backend-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:47a40b68f04ee83e988cd54f2647d02cabc5f6eb65371c28c94c1733dc218d23",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:47a40b68f04ee83e988cd54f2647d02cabc5f6eb65371c28c94c1733dc218d23",
+      "verifiedAtUTC": "2026-09-16T05:43:25.593924+00:00"
+    },
+    "manager": {
+      "localTag": "fedops-local/manager:onprem-20260916",
+      "localImageId": "sha256:b4b71ca2d3ea9fed85e0b617d4ef6f409c77cb85c394a89a415961bc7345037f",
+      "tag": "docker.io/minsoojo/fedops-onprem:manager-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:manager-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:b4b71ca2d3ea9fed85e0b617d4ef6f409c77cb85c394a89a415961bc7345037f",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:b4b71ca2d3ea9fed85e0b617d4ef6f409c77cb85c394a89a415961bc7345037f",
+      "verifiedAtUTC": "2026-09-16T05:48:08.151804+00:00"
+    },
+    "performance": {
+      "localTag": "fedops-local/performance:onprem-20260916",
+      "localImageId": "sha256:142b2c5ac2a414b520bbe255e5e26a29747f8f8dab899324ca6bca27eaf0401b",
+      "tag": "docker.io/minsoojo/fedops-onprem:performance-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:performance-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:142b2c5ac2a414b520bbe255e5e26a29747f8f8dab899324ca6bca27eaf0401b",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:142b2c5ac2a414b520bbe255e5e26a29747f8f8dab899324ca6bca27eaf0401b",
+      "verifiedAtUTC": "2026-09-16T05:48:22.856001+00:00"
+    },
+    "registry": {
+      "localTag": "fedops-local/registry:onprem-20260916",
+      "localImageId": "sha256:06b45d607849b740d0acf1a0ee93e8b0eee17e773bfbfc05196d4b64c17496ba",
+      "tag": "docker.io/minsoojo/fedops-onprem:registry-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:registry-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:06b45d607849b740d0acf1a0ee93e8b0eee17e773bfbfc05196d4b64c17496ba",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:06b45d607849b740d0acf1a0ee93e8b0eee17e773bfbfc05196d4b64c17496ba",
+      "verifiedAtUTC": "2026-09-16T05:48:39.651391+00:00"
+    },
+    "frontend": {
+      "localTag": "fedops-local/frontend:onprem-20260916",
+      "localImageId": "sha256:952c2298b5385a81877b2b2d0dcee9cb94ad2784b6e74297ae1d620646e21fc3",
+      "tag": "docker.io/minsoojo/fedops-onprem:frontend-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:frontend-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:952c2298b5385a81877b2b2d0dcee9cb94ad2784b6e74297ae1d620646e21fc3",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:952c2298b5385a81877b2b2d0dcee9cb94ad2784b6e74297ae1d620646e21fc3",
+      "verifiedAtUTC": "2026-09-16T05:48:56.912600+00:00"
+    },
+    "gateway": {
+      "localTag": "fedops-local/gateway:onprem-20260916",
+      "localImageId": "sha256:f6accffc82a9eb81da33d696b249fb0df5b8562f66216c649802fa557febaa7f",
+      "tag": "docker.io/minsoojo/fedops-onprem:gateway-onprem-20260916",
+      "verified": true,
+      "pushCommand": [
+        "docker",
+        "push",
+        "docker.io/minsoojo/fedops-onprem:gateway-onprem-20260916"
+      ],
+      "pushExitCode": 0,
+      "digest": "sha256:f6accffc82a9eb81da33d696b249fb0df5b8562f66216c649802fa557febaa7f",
+      "pinned": "docker.io/minsoojo/fedops-onprem@sha256:f6accffc82a9eb81da33d696b249fb0df5b8562f66216c649802fa557febaa7f",
+      "verifiedAtUTC": "2026-09-16T05:49:15.127044+00:00"
+    }
+  },
+  "allVerified": true
+}

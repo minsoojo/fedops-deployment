@@ -1,0 +1,7 @@
+{
+  "checkedAtUTC": "2026-09-16T05:45:02.948694+00:00",
+  "repository": "minsoojo/fedops-onprem",
+  "anonymousManifestStatus": 401,
+  "anonymousPullDenied": true,
+  "method": "Anonymous registry token + manifest GET; token not recorded"
+}

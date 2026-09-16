@@ -1,0 +1,50 @@
+{
+  "checkedAtUTC": "2026-09-16T05:49:28.395035+00:00",
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\minsoo\\TASK\\FedOpsDeployment\\work\\helm-tools\\windows-amd64\\helm.exe",
+        "lint",
+        "charts/fedops",
+        "-f",
+        "charts/fedops/tests/static-values.yaml",
+        "-f",
+        "charts/fedops/examples/images-minsoojo.yaml",
+        "--kube-version",
+        "1.36.0",
+        "--strict"
+      ],
+      "exitCode": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "C:\\Users\\minsoo\\TASK\\FedOpsDeployment\\work\\helm-tools\\windows-amd64\\helm.exe",
+        "template",
+        "fedops",
+        "charts/fedops",
+        "-f",
+        "charts/fedops/tests/static-values.yaml",
+        "-f",
+        "charts/fedops/examples/images-minsoojo.yaml",
+        "--kube-version",
+        "1.36.0",
+        "-n",
+        "fedops"
+      ],
+      "exitCode": 0,
+      "stderr": ""
+    }
+  ],
+  "imageRolesMatched": [
+    "backend",
+    "frontend",
+    "gateway",
+    "manager",
+    "performance",
+    "registry"
+  ],
+  "deploymentsWithPullSecret": 9,
+  "resources": 42,
+  "scope": "Helm static rendering only; F Secret creation and cluster pull not performed"
+}

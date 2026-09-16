@@ -1,8 +1,12 @@
-# 개인 Docker Hub 사용 준비
+# 개인 Docker Hub 이미지 게시
 
 계정: **minsoojo**. 현재 PC에서 만든 앱 이미지 6종을 전달한다. GitHub 저장소와 Docker Hub 저장소는 별개다.
 
-## 사용자가 할 일
+**2026-09-16 완료:** 사용자 로그인·비공개 저장소 생성 후 앱 6종 tag/push, 원격 digest 조회, digest로 재다운로드·로컬 검증 이미지 ID 일치 확인을 마쳤다. 익명 manifest 요청은 401로 거부됨을 확인했다. [게시 증빙](verification/published-images.json) · [접근 확인](verification/registry-access-check.json).
+
+[게시 이미지 Helm 설정](charts/fedops/examples/images-minsoojo.yaml)에 6종 digest와 `imagePullSecrets: [{name: fedops-registry-pull}]` 참조를 넣었다. 실제 F 값 파일을 먼저, 이 이미지 파일을 나중에 적용하는 순서다. 해당 Secret은 F namespace에 별도 생성해야 하며 이번에 F에서 생성하지 않았다. [정적 검사](verification/published-chart-check.json): lint/template 성공, 42개 자원·6종 이미지·9개 Deployment의 pull Secret 참조 확인.
+
+## 완료한 사용자 준비 절차 — 재현 참고
 
 ### 1. 현재 PC에서 로그인
 
@@ -34,9 +38,9 @@ docker login
 
 “Docker 로그인 완료, minsoojo/fedops-onprem 비공개 저장소 생성 완료”라고 알려주면 된다. 실제 비밀번호·토큰 대신 성공 여부만 전달한다.
 
-## 이후 진행할 작업
+## 게시한 앱 이미지
 
-| 로컬 이미지 | 게시할 이미지 태그 |
+| 로컬 이미지 | 게시한 이미지 태그 |
 |---|---|
 | `fedops-local/frontend:onprem-20260916` | `minsoojo/fedops-onprem:frontend-onprem-20260916` |
 | `fedops-local/backend:onprem-20260916` | `minsoojo/fedops-onprem:backend-onprem-20260916` |
@@ -45,9 +49,9 @@ docker login
 | `fedops-local/gateway:onprem-20260916` | `minsoojo/fedops-onprem:gateway-onprem-20260916` |
 | `fedops-local/registry:onprem-20260916` | `minsoojo/fedops-onprem:registry-onprem-20260916` |
 
-로그인/저장소 확인 후 위 이미지 tag·push와 게시 digest 확인을 진행한다. 아직 업로드하지 않았다. core wheel 생성용 이미지는 앱 배포 이미지가 아니므로 이 6종에 포함하지 않는다. MongoDB·MinIO·Redis·기존 CPU Task base는 확인한 기존 저장소의 digest를 사용한다.
+위 6종은 게시·재다운로드 확인을 완료했다. core wheel 생성용 이미지는 앱 배포 이미지가 아니므로 이 6종에 포함하지 않는다. MongoDB·MinIO·Redis·기존 CPU Task base는 확인한 기존 저장소의 digest를 사용한다.
 
-아래는 Backend에 대한 **업로드 예시이며 아직 실행하지 않은 명령**이다.
+아래는 이번에 사용한 Backend 업로드·조회 절차의 명령 형식이다. 전체 정확한 push 명령과 결과는 게시 증빙에 기록했다.
 
 ```powershell
 docker tag fedops-local/backend:onprem-20260916 minsoojo/fedops-onprem:backend-onprem-20260916
@@ -55,4 +59,4 @@ docker push minsoojo/fedops-onprem:backend-onprem-20260916
 docker buildx imagetools inspect minsoojo/fedops-onprem:backend-onprem-20260916
 ```
 
-게시 후 Chart에는 태그 대신 레지스트리가 확인한 `minsoojo/fedops-onprem@sha256:...`를 넣는다. 비공개 이미지를 받는 F의 pull 자격은 F 설치 안내에서 별도로 연결한다. GitHub 인증 토큰을 Docker Hub 자격으로 사용하지 않는다.
+이미지 설정에는 태그 대신 레지스트리가 확인한 `docker.io/minsoojo/fedops-onprem@sha256:...`를 넣었다. 비공개 이미지를 받는 F의 pull 자격은 F 설치 안내에서 별도로 연결한다. GitHub 인증 토큰을 Docker Hub 자격으로 사용하지 않는다. 새 Git 저장소의 Task Runtime 연결과 F 배포는 아직 남아 있다.

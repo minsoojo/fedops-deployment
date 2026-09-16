@@ -7,7 +7,7 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 - Chart 0.1.0 정적 검사 540개, 기본 자원 42개.
 - 앱 6종 로컬 이미지 빌드·기동, Mongo 인증·Web SDK/MinIO 왕복 포함 12개 검사 통과.
 - core wheel 생성·45개 Python 파일 대조 완료. 실제 Task Runtime 연결·F/FL 검증은 남아 있습니다.
-- Docker Hub 계정: minsoojo. [로그인·비공개 저장소 준비 방법](DOCKER_HUB.md). 이미지 업로드·Docker Hub 저장소 생성은 아직 하지 않았습니다.
+- Docker Hub `minsoojo/fedops-onprem` 비공개 저장소에 앱 6종 게시·digest 재다운로드·기존 빌드 ID 대조 완료. [게시 기록](DOCKER_HUB.md) · [Helm 이미지 설정](charts/fedops/examples/images-minsoojo.yaml).
 - 위 결과는 `verification/`의 기존 로컬 증빙입니다. 새 GitHub clone 기반 재빌드나 F 배포 성공을 뜻하지 않습니다.
 
 ## 소스와 버전
@@ -51,7 +51,7 @@ core 이미지는 wheel 생성용이며 현재 Task 배포 이미지가 아닙�
 ## Chart
 
 [구성·Secret·F 입력 안내](charts/fedops/README.md), [입력 예시](charts/fedops/examples/f-values.yaml).
-`tests/static-values.yaml`은 가짜 주소/이미지를 쓰는 정적 검사 전용이며 배포하지 않습니다.
+실제 F 값 파일을 먼저, `charts/fedops/examples/images-minsoojo.yaml`을 나중에 적용합니다. namespace에 `fedops-registry-pull` Secret을 별도 준비해야 합니다. `tests/static-values.yaml`은 가짜 주소/이미지를 쓰는 정적 검사 전용이며 배포하지 않습니다.
 
 ```powershell
 helm lint charts/fedops -f charts/fedops/tests/static-values.yaml --strict --kube-version 1.36.0
