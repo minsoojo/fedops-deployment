@@ -38,7 +38,7 @@
   {
     "name": "fedops-silo-baseline-onprem",
     "url": "https://github.com/minsoojo/fedops-silo-baseline-onprem",
-    "commit": "c9c8939e9fe26dc13b8d030b1924e917a2d6635c",
+    "commit": "eb54b25473e387c50b343c9382bdad74e297c3a6",
     "private": true
   }
 ]

@@ -10,6 +10,8 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 - Docker Hub `minsoojo/fedops-onprem` 비공개 저장소에 앱 6종 게시·digest 재다운로드·기존 빌드 ID 대조 완료. [게시 기록](DOCKER_HUB.md) · [Helm 이미지 설정](charts/fedops/examples/images-minsoojo.yaml).
 - 위 결과는 `verification/`의 기존 로컬 증빙입니다. 새 GitHub clone 기반 재빌드나 F 배포 성공을 뜻하지 않습니다.
 
+- Baseline 0.19.1은 새 core commit에 고정했고 로컬 설치·기존 테스트 14개를 통과했습니다. Web/Manager 연결·F 검증은 남아 있습니다. [변경 기록](TASK_PACKAGE.md).
+
 ## 소스와 버전
 
 | 저장소 | 기준 commit |
@@ -20,7 +22,7 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 | [fedops-gateway-onprem](https://github.com/minsoojo/fedops-gateway-onprem) | `e64d3bee896264ce9e0ce9de71a15fc76b4e2088` |
 | [fedops-registry-onprem](https://github.com/minsoojo/fedops-registry-onprem) | `548c5fbb4e0af0883d5b76fbefc2b5caecd9c63f` |
 | [fedops-agent-studio-onprem](https://github.com/minsoojo/fedops-agent-studio-onprem) | `3a66538f33b720641d80f742a8dfe672db2c0c2a` |
-| [fedops-silo-baseline-onprem](https://github.com/minsoojo/fedops-silo-baseline-onprem) | `c9c8939e9fe26dc13b8d030b1924e917a2d6635c` |
+| [fedops-silo-baseline-onprem](https://github.com/minsoojo/fedops-silo-baseline-onprem) | `eb54b25473e387c50b343c9382bdad74e297c3a6` |
 
 `sources.json`의 URL과 commit으로 아래처럼 형제 디렉터리에 가져옵니다. 비공개 저장소를 읽을 수 있는 Git 인증이 필요합니다.
 
@@ -46,7 +48,7 @@ docker build --platform linux/amd64 -t fedops-local/registry:onprem-20260916 ../
 docker build --platform linux/amd64 -t fedops-local/core:onprem-20260916 ../fedops-core-onprem/src/python
 ```
 
-core 이미지는 wheel 생성용이며 현재 Task 배포 이미지가 아닙니다. 기존 Task profile/Release의 Git revision·패키지 pin은 아직 이전 출처를 사용합니다. 새 저장소가 생성됐다는 이유만으로 그 연결이 바뀌지 않습니다.
+core 이미지는 wheel 생성용이며 현재 Task 배포 이미지가 아닙니다. 새 Baseline 소스의 pin은 변경했고 기존 Web/Manager Task profile·배포된 Release는 이전 출처를 사용합니다. 새 저장소가 생성됐다는 이유만으로 그 연결이 바뀌지 않습니다.
 
 ## Chart
 

@@ -1,0 +1,77 @@
+{
+  "recordedAtUTC": "2026-09-16T06:10:23.054728+00:00",
+  "scope": "Local Windows installation; no Web/Manager or F/FL integration",
+  "uv": "0.8.13",
+  "lockPackages": 142,
+  "otherPackageVersionsUnchanged": true,
+  "checks": [
+    {
+      "name": "installed-source-and-cpu-ops",
+      "command": [
+        "C:\\Users\\minsoo\\TASK\\FedOpsDeployment\\repositories\\fedops-silo-baseline-onprem\\federated-task-baseline\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-c",
+        "\nimport importlib.metadata as m,json,platform\nimport torch,torchvision\nd=m.distribution('fedops')\nu=json.loads(d.read_text('direct_url.json'))\nassert d.version=='1.1.30.19+onprem.20260916'\nassert u['url']=='https://github.com/minsoojo/fedops-core-onprem.git'\nassert u['vcs_info']['commit_id']=='ff5f44ddea2705c8d901a54a0272f517822da8f4'\nassert u['subdirectory']=='src/python'\nassert m.version('fedops-federated-task')=='0.19.1'\nassert torch.__version__=='2.8.0+cpu' and torchvision.__version__=='0.23.0+cpu'\nassert torchvision.ops.nms(torch.tensor([[0.,0.,1.,1.]]),torch.tensor([1.]),0.5).tolist()==[0]\nprint(json.dumps(dict(python=platform.python_version(),platform=platform.platform(),fedops=d.version,direct_url=u,torch=torch.__version__,torchvision=torchvision.__version__,torchvision_nms='passed')))\n"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"python\": \"3.12.10\", \"platform\": \"Windows-11-10.0.26200-SP0\", \"fedops\": \"1.1.30.19+onprem.20260916\", \"direct_url\": {\"url\": \"https://github.com/minsoojo/fedops-core-onprem.git\", \"vcs_info\": {\"vcs\": \"git\", \"commit_id\": \"ff5f44ddea2705c8d901a54a0272f517822da8f4\", \"requested_revision\": \"ff5f44ddea2705c8d901a54a0272f517822da8f4\"}, \"subdirectory\": \"src/python\"}, \"torch\": \"2.8.0+cpu\", \"torchvision\": \"0.23.0+cpu\", \"torchvision_nms\": \"passed\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "baseline-tests",
+      "command": [
+        "C:\\Users\\minsoo\\TASK\\FedOpsDeployment\\repositories\\fedops-silo-baseline-onprem\\federated-task-baseline\\.venv\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_authoring_boundaries_are_visible_in_workspace_files (test_baseline.BaselineContractTest.test_authoring_boundaries_are_visible_in_workspace_files) ... ok\ntest_blank_user_contracts_fail_explicitly (test_baseline.BaselineContractTest.test_blank_user_contracts_fail_explicitly) ... ok\ntest_campaign_overlay_is_validated_and_normalized (test_baseline.BaselineContractTest.test_campaign_overlay_is_validated_and_normalized) ... ok\ntest_evaluation_output_contract_is_generic (test_baseline.BaselineContractTest.test_evaluation_output_contract_is_generic) ... ok\ntest_fedops_client_and_server_entrypoints_are_present (test_baseline.BaselineContractTest.test_fedops_client_and_server_entrypoints_are_present) ... ok\ntest_generic_config_is_valid_and_has_no_mnist_contract (test_baseline.BaselineContractTest.test_generic_config_is_valid_and_has_no_mnist_contract) ... ok\ntest_release_manifest_contains_only_workspace_files (test_baseline.BaselineContractTest.test_release_manifest_contains_only_workspace_files) ... ok\ntest_tool_manifest_is_valid_json_template (test_baseline.BaselineContractTest.test_tool_manifest_is_valid_json_template) ... ok\ntest_user_function_signatures_are_fixed (test_baseline.BaselineContractTest.test_user_function_signatures_are_fixed) ... ok\ntest_v15_manager_exposes_legacy_global_model_transport_alias (test_baseline.BaselineContractTest.test_v15_manager_exposes_legacy_global_model_transport_alias) ... ok\ntest_v15_runtime_remains_compatible_with_python_310 (test_baseline.BaselineContractTest.test_v15_runtime_remains_compatible_with_python_310) ... ok\ntest_v15_runtime_uses_matching_cpu_torch_packages_without_owner_configuration (test_baseline.BaselineContractTest.test_v15_runtime_uses_matching_cpu_torch_packages_without_owner_configuration) ... ok\ntest_v15_server_evaluation_is_bounded_without_limiting_client_evaluation (test_baseline.BaselineContractTest.test_v15_server_evaluation_is_bounded_without_limiting_client_evaluation) ... ok\ntest_v16_participation_keeps_task_id_server_discovery (test_baseline.BaselineContractTest.test_v16_participation_keeps_task_id_server_discovery) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 3.321s\n\nOK\n"
+    }
+  ],
+  "lockSha256": "e09c8e3cc828f18588feeecb7a9b2b0b49196cfd1366dfa410ba338946edc9b6",
+  "commands": [
+    {
+      "command": "uv tool run --from uv==0.8.13 uv lock --directory repositories/fedops-silo-baseline-onprem/federated-task-baseline",
+      "exitCode": 0,
+      "result": "Resolved 142 packages; FedOps and Baseline versions changed only."
+    },
+    {
+      "command": "uv tool run --from uv==0.8.13 uv sync --locked --directory repositories/fedops-silo-baseline-onprem/federated-task-baseline",
+      "exitCode": 0,
+      "result": "Installed 126 packages in isolated .venv."
+    },
+    {
+      "command": "uv tool run --from uv==0.8.13 uv sync --frozen --link-mode copy --directory repositories/fedops-silo-baseline-onprem/federated-task-baseline",
+      "exitCode": 0,
+      "result": "Audited 126 packages."
+    },
+    {
+      "command": "uv tool run --from uv==0.8.13 uv pip check --python repositories/fedops-silo-baseline-onprem/federated-task-baseline/.venv/Scripts/python.exe",
+      "exitCode": 0,
+      "result": "All installed packages are compatible."
+    }
+  ],
+  "baselineCommit": "eb54b25473e387c50b343c9382bdad74e297c3a6",
+  "releaseExport": {
+    "command": "python -B tools/build_release.py --output dist/federated-task-baseline-0.19.1",
+    "cwd": "repositories/fedops-silo-baseline-onprem",
+    "exitCode": 0,
+    "filesVerified": 26,
+    "provenance": {
+      "baseline": "federated-task-baseline",
+      "version": "0.19.1",
+      "revision": 1,
+      "sourceCommit": "eb54b25473e387c50b343c9382bdad74e297c3a6",
+      "manifestSha256": "081b9a978631cd99db3bb563b9a5add87a2a8282b327270c39fc39d53155cbb4",
+      "vendoredAt": "2026-09-16T06:12:32.618260+00:00",
+      "runtimeFetch": false
+    },
+    "publishedToWeb": false
+  }
+}
