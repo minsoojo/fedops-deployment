@@ -1,0 +1,150 @@
+{
+  "checkedAtUTC": "2026-09-16T03:10:02.313606+00:00",
+  "results": [
+    {
+      "role": "mongo",
+      "image": "docker.io/library/mongo@sha256:03cda579c8caad6573cb98c2b3d5ff5ead452a6450561129b89595b4b9c18de2",
+      "pullCommand": [
+        "docker",
+        "pull",
+        "--platform",
+        "linux/amd64",
+        "docker.io/library/mongo@sha256:03cda579c8caad6573cb98c2b3d5ff5ead452a6450561129b89595b4b9c18de2"
+      ],
+      "pullExitCode": 0,
+      "versionCommand": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--platform",
+        "linux/amd64",
+        "--entrypoint",
+        "mongod",
+        "docker.io/library/mongo@sha256:03cda579c8caad6573cb98c2b3d5ff5ead452a6450561129b89595b4b9c18de2",
+        "--version"
+      ],
+      "versionExitCode": 0,
+      "versionOutput": "db version v6.0.27\nBuild Info: {\n    \"version\": \"6.0.27\",\n    \"gitVersion\": \"fc88ca137231d7457aed6265d4f32a361ae71716\",\n    \"openSSLVersion\": \"OpenSSL 3.0.2 15 Mar 2022\",\n    \"modules\": [],\n    \"allocator\": \"tcmalloc\",\n    \"environment\": {\n        \"distmod\": \"ubuntu2204\",\n        \"distarch\": \"x86_64\",\n        \"target_arch\": \"x86_64\"\n    }\n}\n",
+      "imageMetadata": {
+        "Id": "sha256:03cda579c8caad6573cb98c2b3d5ff5ead452a6450561129b89595b4b9c18de2",
+        "RepoDigests": [
+          "mongo@sha256:03cda579c8caad6573cb98c2b3d5ff5ead452a6450561129b89595b4b9c18de2"
+        ],
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 270111856
+      }
+    },
+    {
+      "role": "minio",
+      "image": "quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e",
+      "pullCommand": [
+        "docker",
+        "pull",
+        "--platform",
+        "linux/amd64",
+        "quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e"
+      ],
+      "pullExitCode": 0,
+      "versionCommand": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--platform",
+        "linux/amd64",
+        "--entrypoint",
+        "minio",
+        "quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e",
+        "--version"
+      ],
+      "versionExitCode": 0,
+      "versionOutput": "minio version RELEASE.2025-09-07T16-13-09Z (commit-id=07c3a429bfed433e49018cb0f78a52145d4bedeb)\nRuntime: go1.24.6 linux/amd64\nLicense: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html\nCopyright: 2015-2025 MinIO, Inc.\n",
+      "imageMetadata": {
+        "Id": "sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e",
+        "RepoDigests": [
+          "quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e"
+        ],
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 62245347
+      }
+    },
+    {
+      "role": "redis",
+      "image": "docker.io/library/redis@sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b",
+      "pullCommand": [
+        "docker",
+        "pull",
+        "--platform",
+        "linux/amd64",
+        "docker.io/library/redis@sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b"
+      ],
+      "pullExitCode": 0,
+      "versionCommand": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--platform",
+        "linux/amd64",
+        "--entrypoint",
+        "redis-server",
+        "docker.io/library/redis@sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b",
+        "--version"
+      ],
+      "versionExitCode": 0,
+      "versionOutput": "Redis server v=7.2.16 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=4dfe31f1e14419ba\n",
+      "imageMetadata": {
+        "Id": "sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b",
+        "RepoDigests": [
+          "redis@sha256:74566c6910d13ae61e7ce73ebd3127438a1fe805b309b097c323142719ec8a5b"
+        ],
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 43202117
+      }
+    },
+    {
+      "role": "task",
+      "image": "docker.io/tpah20/torch_cpu_amd@sha256:1ed3fbfe398083c5003176281bfb90373219e9e2dae115630ff0b79bf4ce858a",
+      "pullCommand": [
+        "docker",
+        "pull",
+        "--platform",
+        "linux/amd64",
+        "docker.io/tpah20/torch_cpu_amd@sha256:1ed3fbfe398083c5003176281bfb90373219e9e2dae115630ff0b79bf4ce858a"
+      ],
+      "pullExitCode": 0,
+      "versionCommand": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--platform",
+        "linux/amd64",
+        "--entrypoint",
+        "python3",
+        "docker.io/tpah20/torch_cpu_amd@sha256:1ed3fbfe398083c5003176281bfb90373219e9e2dae115630ff0b79bf4ce858a",
+        "-c",
+        "import platform,importlib.metadata as m; print(platform.platform()); print('Python',platform.python_version()); print({n:m.version(n) for n in ['torch','torchvision','boto3','fedops'] if any(d.metadata['Name'].lower()==n for d in m.distributions())})"
+      ],
+      "versionExitCode": 0,
+      "versionOutput": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36\nPython 3.10.13\n{'torch': '2.1.0+cpu', 'torchvision': '0.16.0+cpu'}\n",
+      "imageMetadata": {
+        "Id": "sha256:1ed3fbfe398083c5003176281bfb90373219e9e2dae115630ff0b79bf4ce858a",
+        "RepoDigests": [
+          "tpah20/torch_cpu_amd@sha256:1ed3fbfe398083c5003176281bfb90373219e9e2dae115630ff0b79bf4ce858a"
+        ],
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 843101300
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+
+# On-prem local/generated inputs
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+config.txt
+**/config.txt
+node_modules/
+__pycache__/
+.venv/
+.next/
+.gradle/
+dist/
+build/
+work/
+sources/
+docs/helm/evidence/

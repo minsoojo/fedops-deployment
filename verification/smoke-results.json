@@ -1,0 +1,67 @@
+{
+  "checkedAtUTC": "2026-09-16T03:16:23.942406+00:00",
+  "scope": "Local isolated image startup and Web SDK/MinIO only; not F/Task/FL E2E or real SMTP.",
+  "results": [
+    {
+      "check": "backend HTTP",
+      "passed": true,
+      "detail": "404"
+    },
+    {
+      "check": "manager health",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "performance API",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "registry health",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "gateway API without mail send",
+      "passed": true,
+      "detail": "400"
+    },
+    {
+      "check": "frontend UI",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "frontend runtime config",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "MinIO health",
+      "passed": true,
+      "detail": "200"
+    },
+    {
+      "check": "Redis loopback",
+      "passed": true,
+      "detail": "PONG"
+    },
+    {
+      "check": "Web SDK to MinIO roundtrip",
+      "passed": true,
+      "detail": "SDK upload/list/download/signed download bytes matched"
+    },
+    {
+      "check": "Web Mongo authentication",
+      "passed": true,
+      "detail": "authenticated Mongo ping OK"
+    },
+    {
+      "check": "Registry Mongo authentication",
+      "passed": true,
+      "detail": "authenticated Mongo ping OK"
+    }
+  ],
+  "allPassed": true
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "name": "fedops-core-onprem",
+    "localPath": "repositories/fedops-core-onprem",
+    "url": "https://github.com/minsoojo/fedops-core-onprem",
+    "commit": "ff5f44ddea2705c8d901a54a0272f517822da8f4",
+    "files": 71,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-web-onprem",
+    "localPath": "repositories/fedops-web-onprem",
+    "url": "https://github.com/minsoojo/fedops-web-onprem",
+    "commit": "d51644b1659e7b438bcc59a746cbafa22e5a058a",
+    "files": 677,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-server-onprem",
+    "localPath": "repositories/fedops-server-onprem",
+    "url": "https://github.com/minsoojo/fedops-server-onprem",
+    "commit": "677be801c33e8d5d53e1aedd27c3f152f1d606f3",
+    "files": 52,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-gateway-onprem",
+    "localPath": "repositories/fedops-gateway-onprem",
+    "url": "https://github.com/minsoojo/fedops-gateway-onprem",
+    "commit": "e64d3bee896264ce9e0ce9de71a15fc76b4e2088",
+    "files": 26,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-registry-onprem",
+    "localPath": "repositories/fedops-registry-onprem",
+    "url": "https://github.com/minsoojo/fedops-registry-onprem",
+    "commit": "548c5fbb4e0af0883d5b76fbefc2b5caecd9c63f",
+    "files": 66,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-agent-studio-onprem",
+    "localPath": "repositories/fedops-agent-studio-onprem",
+    "url": "https://github.com/minsoojo/fedops-agent-studio-onprem",
+    "commit": "3a66538f33b720641d80f742a8dfe672db2c0c2a",
+    "files": 157,
+    "private": true,
+    "published": false
+  },
+  {
+    "name": "fedops-silo-baseline-onprem",
+    "localPath": "repositories/fedops-silo-baseline-onprem",
+    "url": "https://github.com/minsoojo/fedops-silo-baseline-onprem",
+    "commit": "c9c8939e9fe26dc13b8d030b1924e917a2d6635c",
+    "files": 35,
+    "private": true,
+    "published": false
+  }
+]
