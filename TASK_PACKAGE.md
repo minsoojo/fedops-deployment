@@ -27,6 +27,8 @@ Windows 11 / Python 3.12.10 / uv 0.8.13, 프로젝트별 `.venv`에서 수행했
 
 [정확한 명령·결과](verification/task-dependency.json). 설치 시 이 PC의 기존 Git 인증을 사용했다. 토큰은 소스·lock·문서에 넣지 않았다.
 
-## 다음 작업과 완료 경계
+## 당시 다음 작업과 완료 경계
+
+후속으로 [Web·Manager 연결과 이미지 게시](TASK_RUNTIME.md)를 완료했다. 아래는 의존성 변경 단계 당시의 경계다.
 
 Web/Manager가 새 Baseline·FedOps 버전을 허용하고 새 Baseline을 배포하도록 연결하는 작업이 남아 있다. F의 비공개 Git 접근 방법과 실제 Linux Task/FL 실행도 별도다. 이번 결과는 로컬 패키지 설치·Baseline 검사 성공이며 F 배포나 Task 전체 통합 성공은 아니다. 기존 앱 이미지 6종은 이번 변경으로 재빌드하지 않았다.

@@ -43,8 +43,8 @@ docker login
 | 로컬 이미지 | 게시한 이미지 태그 |
 |---|---|
 | `fedops-local/frontend:onprem-20260916` | `minsoojo/fedops-onprem:frontend-onprem-20260916` |
-| `fedops-local/backend:onprem-20260916` | `minsoojo/fedops-onprem:backend-onprem-20260916` |
-| `fedops-local/manager:onprem-20260916` | `minsoojo/fedops-onprem:manager-onprem-20260916` |
+| `fedops-local/backend:task-onprem-20260916` | `minsoojo/fedops-onprem:backend-task-onprem-20260916` |
+| `fedops-local/manager:task-onprem-20260916` | `minsoojo/fedops-onprem:manager-task-onprem-20260916` |
 | `fedops-local/performance:onprem-20260916` | `minsoojo/fedops-onprem:performance-onprem-20260916` |
 | `fedops-local/gateway:onprem-20260916` | `minsoojo/fedops-onprem:gateway-onprem-20260916` |
 | `fedops-local/registry:onprem-20260916` | `minsoojo/fedops-onprem:registry-onprem-20260916` |
@@ -54,9 +54,9 @@ docker login
 아래는 이번에 사용한 Backend 업로드·조회 절차의 명령 형식이다. 전체 정확한 push 명령과 결과는 게시 증빙에 기록했다.
 
 ```powershell
-docker tag fedops-local/backend:onprem-20260916 minsoojo/fedops-onprem:backend-onprem-20260916
-docker push minsoojo/fedops-onprem:backend-onprem-20260916
-docker buildx imagetools inspect minsoojo/fedops-onprem:backend-onprem-20260916
+docker tag fedops-local/backend:task-onprem-20260916 minsoojo/fedops-onprem:backend-task-onprem-20260916
+docker push minsoojo/fedops-onprem:backend-task-onprem-20260916
+docker buildx imagetools inspect minsoojo/fedops-onprem:backend-task-onprem-20260916
 ```
 
-이미지 설정에는 태그 대신 레지스트리가 확인한 `docker.io/minsoojo/fedops-onprem@sha256:...`를 넣었다. 비공개 이미지를 받는 F의 pull 자격은 F 설치 안내에서 별도로 연결한다. GitHub 인증 토큰을 Docker Hub 자격으로 사용하지 않는다. 새 Git 저장소의 Task Runtime 연결과 F 배포는 아직 남아 있다.
+이미지 설정에는 태그 대신 레지스트리가 확인한 `docker.io/minsoojo/fedops-onprem@sha256:...`를 넣었다. 비공개 이미지를 받는 F의 pull 자격은 F 설치 안내에서 별도로 연결한다. GitHub 인증 토큰을 Docker Hub 자격으로 사용하지 않는다. [Web·Manager의 새 Task Runtime 연결](TASK_RUNTIME.md)은 로컬 검증·이미지 게시까지 완료했다. F 인증·실제 배포/FL 검증은 남아 있다.

@@ -1,0 +1,15 @@
+Name:      docker.io/minsoojo/fedops-onprem:backend-task-onprem-20260916
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:601076e08db0c4fb3988c97a60b522c4ed4179b54d94baa7648cae81decf234f
+           
+Manifests: 
+  Name:        docker.io/minsoojo/fedops-onprem:backend-task-onprem-20260916@sha256:7843c3ddff78039d331e4d4e66722d32095fe5b361aebc2c8b4d07b2f9e07a46
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        docker.io/minsoojo/fedops-onprem:backend-task-onprem-20260916@sha256:135402f8babbb428bf1354914173844bd64ceec3c8d300573b59cf7217749aa1
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:7843c3ddff78039d331e4d4e66722d32095fe5b361aebc2c8b4d07b2f9e07a46
+    vnd.docker.reference.type:   attestation-manifest

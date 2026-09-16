@@ -1,0 +1,26 @@
+/usr/local/lib/python3.9/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/usr/local/lib/python3.9/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+test_deployment_creation_waits_for_terminating_predecessor (test_scalable_server_operator.ScalableServerOperatorTest) ... ok
+test_external_ip_wait_has_a_bounded_timeout (test_scalable_server_operator.ScalableServerOperatorTest) ... ok
+test_long_task_id_creates_a_dns_label_service_with_full_task_selector (test_scalable_server_operator.ScalableServerOperatorTest) ... ok
+test_network_allocation_failure_preserves_created_resource_metadata (test_scalable_server_operator.ScalableServerOperatorTest) ... ERROR:root:Failed to allocate the network route for task mnist
+Traceback (most recent call last):
+  File "/FedOps-Server/server_manager/utils/scalable_server_operator.py", line 504, in create_scalable_fl_server
+    external_ip = wait_for_external_ip(service_name, namespace)
+  File "/usr/local/lib/python3.9/unittest/mock.py", line 1092, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/usr/local/lib/python3.9/unittest/mock.py", line 1096, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/usr/local/lib/python3.9/unittest/mock.py", line 1151, in _execute_mock_call
+    raise effect
+TimeoutError: external IP unavailable
+ok
+test_runtime_reset_preserves_pvc_and_pv_when_delete_pv_is_false (test_scalable_server_operator.ScalableServerOperatorTest) ... ok
+test_v3_campaign_is_serialized_before_deployment_creation (test_scalable_server_operator.ScalableServerOperatorTest) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.014s
+
+OK

@@ -1,0 +1,445 @@
+TAP version 13
+# Subtest: logout expires the shared access cookie immediately for every FedOps route
+ok 1 - logout expires the shared access cookie immediately for every FedOps route
+  ---
+  duration_ms: 1.134435
+  ...
+# Subtest: bundled Baseline 0.19.1 keeps Task Data and pins optional evaluation runtime
+ok 2 - bundled Baseline 0.19.1 keeps Task Data and pins optional evaluation runtime
+  ---
+  duration_ms: 20.995964
+  ...
+# Subtest: bundled Baseline 0.18.0 remains unchanged for existing Tasks
+ok 3 - bundled Baseline 0.18.0 remains unchanged for existing Tasks
+  ---
+  duration_ms: 3.268502
+  ...
+# Subtest: bundled Baseline 0.17.0 remains downloadable for existing Tasks
+ok 4 - bundled Baseline 0.17.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.637746
+  ...
+# Subtest: bundled Baseline 0.16.0 remains downloadable for existing Tasks
+ok 5 - bundled Baseline 0.16.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.616761
+  ...
+# Subtest: bundled Baseline 0.15.0 remains downloadable for existing Tasks
+ok 6 - bundled Baseline 0.15.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.226232
+  ...
+# Subtest: bundled Baseline 0.14.0 remains downloadable for existing Tasks
+ok 7 - bundled Baseline 0.14.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 3.782356
+  ...
+# Subtest: bundled Baseline 0.13.0 remains downloadable for existing Tasks
+ok 8 - bundled Baseline 0.13.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.483163
+  ...
+# Subtest: bundled Baseline 0.12.0 remains downloadable for existing Tasks
+ok 9 - bundled Baseline 0.12.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.710024
+  ...
+# Subtest: bundled Baseline 0.11.0 remains downloadable for existing Tasks
+ok 10 - bundled Baseline 0.11.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.915535
+  ...
+# Subtest: bundled Baseline 0.8.0 remains downloadable for existing Tasks
+ok 11 - bundled Baseline 0.8.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.335298
+  ...
+# Subtest: bundled Baseline 0.9.0 remains downloadable for existing Tasks
+ok 12 - bundled Baseline 0.9.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.277665
+  ...
+# Subtest: bundled Baseline 0.7.0 remains downloadable for existing Tasks
+ok 13 - bundled Baseline 0.7.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.260823
+  ...
+# Subtest: bundled Baseline 0.6.0 remains downloadable for existing Tasks
+ok 14 - bundled Baseline 0.6.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.183203
+  ...
+# Subtest: bundled Baseline 0.5.0 remains downloadable for existing Tasks
+ok 15 - bundled Baseline 0.5.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.522378
+  ...
+# Subtest: bundled Baseline 0.4.0 remains downloadable for existing Tasks
+ok 16 - bundled Baseline 0.4.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.236172
+  ...
+# Subtest: bundled Baseline 0.3.0 remains downloadable for existing Tasks
+ok 17 - bundled Baseline 0.3.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.058982
+  ...
+# Subtest: unknown bundled Baseline artifact IDs cannot resolve a filesystem path
+ok 18 - unknown bundled Baseline artifact IDs cannot resolve a filesystem path
+  ---
+  duration_ms: 0.402054
+  ...
+# Subtest: Baseline 0.19.0 remains downloadable with its original runtime pin
+ok 19 - Baseline 0.19.0 remains downloadable with its original runtime pin
+  ---
+  duration_ms: 0.71976
+  ...
+# Subtest: only matching completed and non-ready Campaign can complete an active Web run
+ok 3 - only matching completed and non-ready Campaign can complete an active Web run
+  ---
+  duration_ms: 0.893104
+  ...
+# Subtest: explicit evaluation mode is preserved; old campaigns keep Release defaults
+ok 4 - explicit evaluation mode is preserved; old campaigns keep Release defaults
+  ---
+  duration_ms: 2.661709
+  ...
+# Subtest: Campaign values are normalized independently from a Task Release
+ok 5 - Campaign values are normalized independently from a Task Release
+  ---
+  duration_ms: 0.200664
+  ...
+# Subtest: Campaign rejects unsupported strategies and parameters
+ok 6 - Campaign rejects unsupported strategies and parameters
+  ---
+  duration_ms: 0.111489
+  ...
+# Subtest: Campaign uses numeric metadata and legacy string fields at the Server Manager boundary
+ok 7 - Campaign uses numeric metadata and legacy string fields at the Server Manager boundary
+  ---
+  duration_ms: 0.121073
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/campaign-stop-routes.test.js
+not ok 5 - /app/server/test/campaign-stop-routes.test.js
+  ---
+  duration_ms: 374.060416
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: internal/public addresses use supplied values and missing public host cannot expose a Task LAN IP
+ok 6 - internal/public addresses use supplied values and missing public host cannot expose a Task LAN IP
+  ---
+  duration_ms: 1.322544
+  ...
+# (node:69) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+# 
+# Please migrate your code to use AWS SDK for JavaScript (v3).
+# For more information, check the migration guide at https://a.co/7PzMCcy
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CORS list controls actual HTTP response headers and rejects wildcard/malformed input
+ok 7 - CORS list controls actual HTTP response headers and rejects wildcard/malformed input
+  ---
+  duration_ms: 27.952422
+  ...
+# Subtest: S3 config retains AWS defaults when unset and signs using a separate public endpoint without rewriting the URL
+ok 8 - S3 config retains AWS defaults when unset and signs using a separate public endpoint without rewriting the URL
+  ---
+  duration_ms: 11.607935
+  ...
+# Subtest: MinIO paths preserve model, Task and XAI bucket/key for ordinary operations and signing
+ok 9 - MinIO paths preserve model, Task and XAI bucket/key for ordinary operations and signing
+  ---
+  duration_ms: 11.87518
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/evaluation-policy.test.js
+not ok 7 - /app/server/test/evaluation-policy.test.js
+  ---
+  duration_ms: 198.283684
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Baseline 0.19 selects optional evaluation without upgrading existing contracts
+ok 8 - Baseline 0.19 selects optional evaluation without upgrading existing contracts
+  ---
+  duration_ms: 1.300878
+  ...
+# Subtest: on-prem Baseline selects its immutable core and preserves existing Task pins
+ok 9 - on-prem Baseline selects its immutable core and preserves existing Task pins
+  ---
+  duration_ms: 0.283678
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/fixtures/manager-consumers.mjs
+not ok 9 - /app/server/test/fixtures/manager-consumers.mjs
+  ---
+  duration_ms: 87.070413
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: duplicate lookup runs only after the complete artifact body is verified
+ok 10 - duplicate lookup runs only after the complete artifact body is verified
+  ---
+  duration_ms: 17.997558
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/registry-auth-routes.test.js
+not ok 11 - /app/server/test/registry-auth-routes.test.js
+  ---
+  duration_ms: 419.126762
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: Release config decides true/false; missing, interpolated or non-boolean values are not guessed
+ok 12 - Release config decides true/false; missing, interpolated or non-boolean values are not guessed
+  ---
+  duration_ms: 3.406971
+  ...
+# Subtest: old immutable runtimes are not silently upgraded to client-metric OFF
+ok 13 - old immutable runtimes are not silently upgraded to client-metric OFF
+  ---
+  duration_ms: 0.627131
+  ...
+# Subtest: reader verifies the published archive, caches by immutable identity and cleans temporary files
+ok 14 - reader verifies the published archive, caches by immutable identity and cleans temporary files
+  ---
+  duration_ms: 7.812367
+  ...
+# Subtest: failed reads and checksum failures return unavailable, never an invented OFF value
+ok 15 - failed reads and checksum failures return unavailable, never an invented OFF value
+  ---
+  duration_ms: 1.268754
+  ...
+# Subtest: runtime artifact token binds an exact current Published Release and survives Pod restarts
+ok 13 - runtime artifact token binds an exact current Published Release and survives Pod restarts
+  ---
+  duration_ms: 1.552746
+  ...
+# Subtest: time-limited v1 runtime artifact tokens remain compatible
+ok 14 - time-limited v1 runtime artifact tokens remain compatible
+  ---
+  duration_ms: 0.254066
+  ...
+# Subtest: only confirmed missing Deployment and no Pods permit creation
+ok 14 - only confirmed missing Deployment and no Pods permit creation
+  ---
+  duration_ms: 1.226487
+  ...
+# Subtest: existing runtime and unavailable status never call the mutating handler
+ok 15 - existing runtime and unavailable status never call the mutating handler
+  ---
+  duration_ms: 0.563739
+  ...
+# Subtest: concurrent and immediately repeated creation is blocked during background allocation
+ok 16 - concurrent and immediately repeated creation is blocked during background allocation
+  ---
+  duration_ms: 0.215922
+  ...
+# Subtest: failed creation releases the pending guard for retry
+ok 17 - failed creation releases the pending guard for retry
+  ---
+  duration_ms: 0.106688
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/runtime-creation-routes.test.js
+not ok 15 - /app/server/test/runtime-creation-routes.test.js
+  ---
+  duration_ms: 241.57139
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: external file is loaded before configuration evaluation, regardless of working directory
+ok 16 - external file is loaded before configuration evaluation, regardless of working directory
+  ---
+  duration_ms: 38.468447
+  ...
+# Subtest: injected env overrides the same key in a file; legacy-only input still works
+ok 17 - injected env overrides the same key in a file; legacy-only input still works
+  ---
+  duration_ms: 73.28112
+  ...
+# Subtest: matching aliases normalize and conflicting aliases fail without echoing values
+ok 18 - matching aliases normalize and conflicting aliases fail without echoing values
+  ---
+  duration_ms: 73.783386
+  ...
+# Subtest: missing or invalid settings fail before application startup and do not leak credentials
+ok 19 - missing or invalid settings fail before application startup and do not leak credentials
+  ---
+  duration_ms: 220.932438
+  ...
+# Subtest: file settings A/B route existing HTTP and socket handlers to the selected Manager
+ok 17 - file settings A/B route existing HTTP and socket handlers to the selected Manager
+  ---
+  duration_ms: 692.738223
+  ...
+# Subtest: classic aggregation servers prefer the PVC runtime with a legacy fallback
+ok 18 - classic aggregation servers prefer the PVC runtime with a legacy fallback
+  ---
+  duration_ms: 3.31865
+  ...
+# Subtest: classic aggregation stop keeps the legacy process contract
+ok 19 - classic aggregation stop keeps the legacy process contract
+  ---
+  duration_ms: 1.213417
+  ...
+# Subtest: v3 aggregation stop targets the recorded process and clears its PID
+ok 20 - v3 aggregation stop targets the recorded process and clears its PID
+  ---
+  duration_ms: 1.227632
+  ...
+# Subtest: v3 aggregation servers retain the exact Release environment
+ok 21 - v3 aggregation servers retain the exact Release environment
+  ---
+  duration_ms: 1.16534
+  ...
+# Subtest: v3 aggregation start applies the latest saved Campaign to the process
+ok 22 - v3 aggregation start applies the latest saved Campaign to the process
+  ---
+  duration_ms: 1.425952
+  ...
+# Subtest: v3 aggregation start exports one isolated Campaign Run and rejects overlap
+ok 23 - v3 aggregation start exports one isolated Campaign Run and rejects overlap
+  ---
+  duration_ms: 2.071212
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/task-access.test.js
+not ok 19 - /app/server/test/task-access.test.js
+  ---
+  duration_ms: 218.67241
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: v3 modification accepts Registry metadata and rejects runtime fields
+ok 20 - v3 modification accepts Registry metadata and rejects runtime fields
+  ---
+  duration_ms: 2.760328
+  ...
+# Subtest: v3 visibility changes do not rewrite immutable publication fields
+ok 21 - v3 visibility changes do not rewrite immutable publication fields
+  ---
+  duration_ms: 0.141806
+  ...
+# Subtest: legacy modification retains legacy training and YAML settings
+ok 22 - legacy modification retains legacy training and YAML settings
+  ---
+  duration_ms: 0.084368
+  ...
+# Subtest: a public Federated Task can publish a Ready Release directly
+ok 21 - a public Federated Task can publish a Ready Release directly
+  ---
+  duration_ms: 0.952104
+  ...
+# Subtest: publishing a private Federated Task requires an explicit make-public action
+ok 22 - publishing a private Federated Task requires an explicit make-public action
+  ---
+  duration_ms: 0.213387
+  ...
+# Subtest: SBA-FL Tasks remain excluded from Registry publishing
+ok 23 - SBA-FL Tasks remain excluded from Registry publishing
+  ---
+  duration_ms: 0.052629
+  ...
+# Subtest: upload receipt supplies path only for unbound ON Campaigns
+ok 22 - upload receipt supplies path only for unbound ON Campaigns
+  ---
+  duration_ms: 1.058648
+  ...
+# file:///app/server/src/config/serverManager.js:24
+#   throw new Error('FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).');
+#         ^
+# 
+# Error: FL_SERVER_MANAGER_URL is required (SERVER_MANAGER_URL is accepted for compatibility).
+#     at file:///app/server/src/config/serverManager.js:24:9
+#     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+# 
+# Node.js v18.16.0
+# Subtest: /app/server/test/validation-upload-routes.test.js
+not ok 23 - /app/server/test/validation-upload-routes.test.js
+  ---
+  duration_ms: 253.389801
+  failureType: 'testCodeFailure'
+  exitCode: 1
+  error: 'test failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Subtest: validation upload requires explicit consent, ZIP size and checksum
+ok 24 - validation upload requires explicit consent, ZIP size and checksum
+  ---
+  duration_ms: 0.873084
+  ...
+# Subtest: stream rejects oversized and truncated requests
+ok 25 - stream rejects oversized and truncated requests
+  ---
+  duration_ms: 7.53724
+  ...
+1..68
+# tests 68
+# pass 61
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5229.628553

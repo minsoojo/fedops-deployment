@@ -1,0 +1,545 @@
+TAP version 13
+# Subtest: logout expires the shared access cookie immediately for every FedOps route
+ok 1 - logout expires the shared access cookie immediately for every FedOps route
+  ---
+  duration_ms: 0.988252
+  ...
+# Subtest: bundled Baseline 0.19.1 keeps Task Data and pins optional evaluation runtime
+ok 2 - bundled Baseline 0.19.1 keeps Task Data and pins optional evaluation runtime
+  ---
+  duration_ms: 12.14484
+  ...
+# Subtest: bundled Baseline 0.18.0 remains unchanged for existing Tasks
+ok 3 - bundled Baseline 0.18.0 remains unchanged for existing Tasks
+  ---
+  duration_ms: 3.281562
+  ...
+# Subtest: bundled Baseline 0.17.0 remains downloadable for existing Tasks
+ok 4 - bundled Baseline 0.17.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.789656
+  ...
+# Subtest: bundled Baseline 0.16.0 remains downloadable for existing Tasks
+ok 5 - bundled Baseline 0.16.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.58171
+  ...
+# Subtest: bundled Baseline 0.15.0 remains downloadable for existing Tasks
+ok 6 - bundled Baseline 0.15.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.533385
+  ...
+# Subtest: bundled Baseline 0.14.0 remains downloadable for existing Tasks
+ok 7 - bundled Baseline 0.14.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.572332
+  ...
+# Subtest: bundled Baseline 0.13.0 remains downloadable for existing Tasks
+ok 8 - bundled Baseline 0.13.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.844194
+  ...
+# Subtest: bundled Baseline 0.12.0 remains downloadable for existing Tasks
+ok 9 - bundled Baseline 0.12.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.657961
+  ...
+# Subtest: bundled Baseline 0.11.0 remains downloadable for existing Tasks
+ok 10 - bundled Baseline 0.11.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.346604
+  ...
+# Subtest: bundled Baseline 0.8.0 remains downloadable for existing Tasks
+ok 11 - bundled Baseline 0.8.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.28553
+  ...
+# Subtest: bundled Baseline 0.9.0 remains downloadable for existing Tasks
+ok 12 - bundled Baseline 0.9.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.214177
+  ...
+# Subtest: bundled Baseline 0.7.0 remains downloadable for existing Tasks
+ok 13 - bundled Baseline 0.7.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.08628
+  ...
+# Subtest: bundled Baseline 0.6.0 remains downloadable for existing Tasks
+ok 14 - bundled Baseline 0.6.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.13379
+  ...
+# Subtest: bundled Baseline 0.5.0 remains downloadable for existing Tasks
+ok 15 - bundled Baseline 0.5.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 2.251123
+  ...
+# Subtest: bundled Baseline 0.4.0 remains downloadable for existing Tasks
+ok 16 - bundled Baseline 0.4.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.141157
+  ...
+# Subtest: bundled Baseline 0.3.0 remains downloadable for existing Tasks
+ok 17 - bundled Baseline 0.3.0 remains downloadable for existing Tasks
+  ---
+  duration_ms: 1.363545
+  ...
+# Subtest: unknown bundled Baseline artifact IDs cannot resolve a filesystem path
+ok 18 - unknown bundled Baseline artifact IDs cannot resolve a filesystem path
+  ---
+  duration_ms: 0.193994
+  ...
+# Subtest: Baseline 0.19.0 remains downloadable with its original runtime pin
+ok 19 - Baseline 0.19.0 remains downloadable with its original runtime pin
+  ---
+  duration_ms: 0.257523
+  ...
+# Subtest: only matching completed and non-ready Campaign can complete an active Web run
+ok 3 - only matching completed and non-ready Campaign can complete an active Web run
+  ---
+  duration_ms: 0.67406
+  ...
+# Subtest: explicit evaluation mode is preserved; old campaigns keep Release defaults
+ok 4 - explicit evaluation mode is preserved; old campaigns keep Release defaults
+  ---
+  duration_ms: 1.417246
+  ...
+# Subtest: Campaign values are normalized independently from a Task Release
+ok 5 - Campaign values are normalized independently from a Task Release
+  ---
+  duration_ms: 0.175382
+  ...
+# Subtest: Campaign rejects unsupported strategies and parameters
+ok 6 - Campaign rejects unsupported strategies and parameters
+  ---
+  duration_ms: 0.127109
+  ...
+# Subtest: Campaign uses numeric metadata and legacy string fields at the Server Manager boundary
+ok 7 - Campaign uses numeric metadata and legacy string fields at the Server Manager boundary
+  ---
+  duration_ms: 0.092957
+  ...
+# Error stopping FL server: { detail: 'Campaign changed' }
+# Subtest: stop declares intent before kill, finalizes readiness, and preserves already-completed runs
+ok 5 - stop declares intent before kill, finalizes readiness, and preserves already-completed runs
+  ---
+  duration_ms: 17.185298
+  ...
+# Subtest: internal/public addresses use supplied values and missing public host cannot expose a Task LAN IP
+ok 6 - internal/public addresses use supplied values and missing public host cannot expose a Task LAN IP
+  ---
+  duration_ms: 1.196573
+  ...
+# (node:70) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+# 
+# Please migrate your code to use AWS SDK for JavaScript (v3).
+# For more information, check the migration guide at https://a.co/7PzMCcy
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CORS list controls actual HTTP response headers and rejects wildcard/malformed input
+ok 7 - CORS list controls actual HTTP response headers and rejects wildcard/malformed input
+  ---
+  duration_ms: 19.77486
+  ...
+# Subtest: S3 config retains AWS defaults when unset and signs using a separate public endpoint without rewriting the URL
+ok 8 - S3 config retains AWS defaults when unset and signs using a separate public endpoint without rewriting the URL
+  ---
+  duration_ms: 9.146301
+  ...
+# Subtest: MinIO paths preserve model, Task and XAI bucket/key for ordinary operations and signing
+ok 9 - MinIO paths preserve model, Task and XAI bucket/key for ordinary operations and signing
+  ---
+  duration_ms: 9.687945
+  ...
+# Subtest: Task settings and immutable Campaign snapshot retain evaluation selection
+ok 7 - Task settings and immutable Campaign snapshot retain evaluation selection
+  ---
+  duration_ms: 4.361917
+  ...
+# Subtest: new mode preflights before starting; legacy start is unchanged
+ok 8 - new mode preflights before starting; legacy start is unchanged
+  ---
+  duration_ms: 0.345201
+  ...
+# Subtest: a 200 command response without startup confirmation is not success
+ok 9 - a 200 command response without startup confirmation is not success
+  ---
+  duration_ms: 0.352553
+  ...
+# Subtest: global evaluation source and nulls survive monitoring normalization
+ok 10 - global evaluation source and nulls survive monitoring normalization
+  ---
+  duration_ms: 0.491733
+  ...
+# Subtest: Baseline 0.19 selects optional evaluation without upgrading existing contracts
+ok 8 - Baseline 0.19 selects optional evaluation without upgrading existing contracts
+  ---
+  duration_ms: 1.132141
+  ...
+# Subtest: on-prem Baseline selects its immutable core and preserves existing Task pins
+ok 9 - on-prem Baseline selects its immutable core and preserves existing Task pins
+  ---
+  duration_ms: 0.206929
+  ...
+# Subtest: duplicate lookup runs only after the complete artifact body is verified
+ok 9 - duplicate lookup runs only after the complete artifact body is verified
+  ---
+  duration_ms: 14.667835
+  ...
+# Subtest: Registry Task routes require login
+ok 10 - Registry Task routes require login
+  ---
+  duration_ms: 0.691349
+  ...
+# Subtest: Registry model and file routes require login
+ok 11 - Registry model and file routes require login
+  ---
+  duration_ms: 0.088723
+  ...
+# Subtest: Default Baseline release route requires login
+ok 12 - Default Baseline release route requires login
+  ---
+  duration_ms: 0.044417
+  ...
+# Subtest: Participant runtime manifest requires login while signed Pod artifacts do not
+ok 13 - Participant runtime manifest requires login while signed Pod artifacts do not
+  ---
+  duration_ms: 0.101564
+  ...
+# Subtest: Registry owner lookup accepts both canonical and legacy URL handles
+ok 14 - Registry owner lookup accepts both canonical and legacy URL handles
+  ---
+  duration_ms: 0.395822
+  ...
+# (node:114) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+# 
+# Please migrate your code to use AWS SDK for JavaScript (v3).
+# For more information, check the migration guide at https://a.co/7PzMCcy
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Release config decides true/false; missing, interpolated or non-boolean values are not guessed
+ok 11 - Release config decides true/false; missing, interpolated or non-boolean values are not guessed
+  ---
+  duration_ms: 2.540583
+  ...
+# Subtest: old immutable runtimes are not silently upgraded to client-metric OFF
+ok 12 - old immutable runtimes are not silently upgraded to client-metric OFF
+  ---
+  duration_ms: 0.224155
+  ...
+# Subtest: reader verifies the published archive, caches by immutable identity and cleans temporary files
+ok 13 - reader verifies the published archive, caches by immutable identity and cleans temporary files
+  ---
+  duration_ms: 4.553434
+  ...
+# Subtest: failed reads and checksum failures return unavailable, never an invented OFF value
+ok 14 - failed reads and checksum failures return unavailable, never an invented OFF value
+  ---
+  duration_ms: 0.954826
+  ...
+# Subtest: runtime artifact token binds an exact current Published Release and survives Pod restarts
+ok 12 - runtime artifact token binds an exact current Published Release and survives Pod restarts
+  ---
+  duration_ms: 1.6023
+  ...
+# Subtest: time-limited v1 runtime artifact tokens remain compatible
+ok 13 - time-limited v1 runtime artifact tokens remain compatible
+  ---
+  duration_ms: 0.218102
+  ...
+# Subtest: only confirmed missing Deployment and no Pods permit creation
+ok 13 - only confirmed missing Deployment and no Pods permit creation
+  ---
+  duration_ms: 0.885735
+  ...
+# Subtest: existing runtime and unavailable status never call the mutating handler
+ok 14 - existing runtime and unavailable status never call the mutating handler
+  ---
+  duration_ms: 0.488594
+  ...
+# Subtest: concurrent and immediately repeated creation is blocked during background allocation
+ok 15 - concurrent and immediately repeated creation is blocked during background allocation
+  ---
+  duration_ms: 0.167847
+  ...
+# Subtest: failed creation releases the pending guard for retry
+ok 16 - failed creation releases the pending guard for retry
+  ---
+  duration_ms: 0.096923
+  ...
+# Subtest: all Web Create routes authorize before status checks and reject existing runtimes without writes
+ok 14 - all Web Create routes authorize before status checks and reject existing runtimes without writes
+  ---
+  duration_ms: 23.127846
+  ...
+# Subtest: external file is loaded before configuration evaluation, regardless of working directory
+ok 15 - external file is loaded before configuration evaluation, regardless of working directory
+  ---
+  duration_ms: 35.479564
+  ...
+# Subtest: injected env overrides the same key in a file; legacy-only input still works
+ok 16 - injected env overrides the same key in a file; legacy-only input still works
+  ---
+  duration_ms: 69.665481
+  ...
+# Subtest: matching aliases normalize and conflicting aliases fail without echoing values
+ok 17 - matching aliases normalize and conflicting aliases fail without echoing values
+  ---
+  duration_ms: 65.981473
+  ...
+# Subtest: missing or invalid settings fail before application startup and do not leak credentials
+ok 18 - missing or invalid settings fail before application startup and do not leak credentials
+  ---
+  duration_ms: 193.177608
+  ...
+# Subtest: file settings A/B route existing HTTP and socket handlers to the selected Manager
+ok 16 - file settings A/B route existing HTTP and socket handlers to the selected Manager
+  ---
+  duration_ms: 697.589375
+  ...
+# Subtest: classic aggregation servers prefer the PVC runtime with a legacy fallback
+ok 17 - classic aggregation servers prefer the PVC runtime with a legacy fallback
+  ---
+  duration_ms: 2.891172
+  ...
+# Subtest: classic aggregation stop keeps the legacy process contract
+ok 18 - classic aggregation stop keeps the legacy process contract
+  ---
+  duration_ms: 1.430762
+  ...
+# Subtest: v3 aggregation stop targets the recorded process and clears its PID
+ok 19 - v3 aggregation stop targets the recorded process and clears its PID
+  ---
+  duration_ms: 1.256597
+  ...
+# Subtest: v3 aggregation servers retain the exact Release environment
+ok 20 - v3 aggregation servers retain the exact Release environment
+  ---
+  duration_ms: 1.352609
+  ...
+# Subtest: v3 aggregation start applies the latest saved Campaign to the process
+ok 21 - v3 aggregation start applies the latest saved Campaign to the process
+  ---
+  duration_ms: 1.571893
+  ...
+# Subtest: v3 aggregation start exports one isolated Campaign Run and rejects overlap
+ok 22 - v3 aggregation start exports one isolated Campaign Run and rejects overlap
+  ---
+  duration_ms: 1.421973
+  ...
+# Subtest: legacy tasks without visibility remain private
+ok 18 - legacy tasks without visibility remain private
+  ---
+  duration_ms: 0.841404
+  ...
+# Subtest: unversioned existing Tasks keep the legacy FedOps runtime contract
+ok 19 - unversioned existing Tasks keep the legacy FedOps runtime contract
+  ---
+  duration_ms: 0.475796
+  ...
+# Subtest: Baseline metadata alone never upgrades an existing Task Runtime
+ok 20 - Baseline metadata alone never upgrades an existing Task Runtime
+  ---
+  duration_ms: 0.252867
+  ...
+# Subtest: an explicitly stored Runtime contract is stable across Baseline defaults
+ok 21 - an explicitly stored Runtime contract is stable across Baseline defaults
+  ---
+  duration_ms: 0.126746
+  ...
+# Subtest: SBA-FL tasks are never discoverable through the Public Task registry
+ok 22 - SBA-FL tasks are never discoverable through the Public Task registry
+  ---
+  duration_ms: 0.088376
+  ...
+# Subtest: new public Drafts require a Published Release before Registry discovery
+ok 23 - new public Drafts require a Published Release before Registry discovery
+  ---
+  duration_ms: 0.05688
+  ...
+# Subtest: FedOps 1.3 Published Release artifacts require approved access
+ok 24 - FedOps 1.3 Published Release artifacts require approved access
+  ---
+  duration_ms: 0.047716
+  ...
+# Subtest: pending participation requests can be withdrawn before artifact access
+ok 25 - pending participation requests can be withdrawn before artifact access
+  ---
+  duration_ms: 0.083525
+  ...
+# Subtest: approved participants must complete a run in the current approval cycle before leaving
+ok 26 - approved participants must complete a run in the current approval cycle before leaving
+  ---
+  duration_ms: 0.224155
+  ...
+# Subtest: left participants have no active membership and can rejoin through a new request
+ok 27 - left participants have no active membership and can rejoin through a new request
+  ---
+  duration_ms: 0.153339
+  ...
+# Subtest: a participant who left must submit a new request before owner approval
+ok 28 - a participant who left must submit a new request before owner approval
+  ---
+  duration_ms: 0.172148
+  ...
+# Subtest: public discovery does not grant Published Release artifact access
+ok 29 - public discovery does not grant Published Release artifact access
+  ---
+  duration_ms: 0.163689
+  ...
+# Subtest: legacy embedded owner and new ownerId are both recognized
+ok 30 - legacy embedded owner and new ownerId are both recognized
+  ---
+  duration_ms: 0.05811
+  ...
+# Subtest: public task DTO never exposes runtime configuration or owner email
+ok 31 - public task DTO never exposes runtime configuration or owner email
+  ---
+  duration_ms: 0.671252
+  ...
+# Subtest: owners retain management and model download permissions
+ok 32 - owners retain management and model download permissions
+  ---
+  duration_ms: 0.08636
+  ...
+# Subtest: administrator management access does not become Task ownership
+ok 33 - administrator management access does not become Task ownership
+  ---
+  duration_ms: 0.129182
+  ...
+# Subtest: administrator participation remains separate from management access
+ok 34 - administrator participation remains separate from management access
+  ---
+  duration_ms: 0.13065
+  ...
+# Subtest: handles and slugs use stable URL-safe values
+ok 35 - handles and slugs use stable URL-safe values
+  ---
+  duration_ms: 0.473145
+  ...
+# Subtest: legacy activity exposes aggregate progress without client identities
+ok 36 - legacy activity exposes aggregate progress without client identities
+  ---
+  duration_ms: 0.63384
+  ...
+# Subtest: v3 activity uses the saved Campaign instead of legacy Task defaults
+ok 37 - v3 activity uses the saved Campaign instead of legacy Task defaults
+  ---
+  duration_ms: 0.097124
+  ...
+# Subtest: a new Campaign Run resets round progress and preserves model lineage
+ok 38 - a new Campaign Run resets round progress and preserves model lineage
+  ---
+  duration_ms: 0.158697
+  ...
+# Subtest: administrator activity is identified as admin rather than owner
+ok 39 - administrator activity is identified as admin rather than owner
+  ---
+  duration_ms: 0.080494
+  ...
+# Subtest: legacy status normalization prefers explicit server state
+ok 40 - legacy status normalization prefers explicit server state
+  ---
+  duration_ms: 0.046629
+  ...
+# Subtest: monitoring model versions and round limits are normalized
+ok 41 - monitoring model versions and round limits are normalized
+  ---
+  duration_ms: 0.106913
+  ...
+# Subtest: owner monitoring snapshot sorts metrics and resolves client context
+ok 42 - owner monitoring snapshot sorts metrics and resolves client context
+  ---
+  duration_ms: 1.049323
+  ...
+# Subtest: monitoring snapshot falls back to all clients for an unknown device
+ok 43 - monitoring snapshot falls back to all clients for an unknown device
+  ---
+  duration_ms: 0.140612
+  ...
+# Subtest: default Task Card is Markdown and strips embedded HTML
+ok 44 - default Task Card is Markdown and strips embedded HTML
+  ---
+  duration_ms: 0.90698
+  ...
+# Subtest: default baseline publishes versioned model and data preparation contracts
+ok 45 - default baseline publishes versioned model and data preparation contracts
+  ---
+  duration_ms: 0.292273
+  ...
+# Subtest: immutable Baseline template paths and manifest contract are validated
+ok 46 - immutable Baseline template paths and manifest contract are validated
+  ---
+  duration_ms: 0.561647
+  ...
+# Subtest: Task Hub preview accepts text contracts and rejects model binaries
+ok 47 - Task Hub preview accepts text contracts and rejects model binaries
+  ---
+  duration_ms: 0.082808
+  ...
+# Subtest: usage series fills missing days without exposing downloader identity
+ok 48 - usage series fills missing days without exposing downloader identity
+  ---
+  duration_ms: 0.228786
+  ...
+# (node:351) NOTE: We are formalizing our plans to enter AWS SDK for JavaScript (v2) into maintenance mode in 2023.
+# 
+# Please migrate your code to use AWS SDK for JavaScript (v3).
+# For more information, check the migration guide at https://a.co/7PzMCcy
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: v3 modification accepts Registry metadata and rejects runtime fields
+ok 19 - v3 modification accepts Registry metadata and rejects runtime fields
+  ---
+  duration_ms: 1.038278
+  ...
+# Subtest: v3 visibility changes do not rewrite immutable publication fields
+ok 20 - v3 visibility changes do not rewrite immutable publication fields
+  ---
+  duration_ms: 0.079177
+  ...
+# Subtest: legacy modification retains legacy training and YAML settings
+ok 21 - legacy modification retains legacy training and YAML settings
+  ---
+  duration_ms: 0.076314
+  ...
+# Subtest: a public Federated Task can publish a Ready Release directly
+ok 20 - a public Federated Task can publish a Ready Release directly
+  ---
+  duration_ms: 0.86552
+  ...
+# Subtest: publishing a private Federated Task requires an explicit make-public action
+ok 21 - publishing a private Federated Task requires an explicit make-public action
+  ---
+  duration_ms: 0.162229
+  ...
+# Subtest: SBA-FL Tasks remain excluded from Registry publishing
+ok 22 - SBA-FL Tasks remain excluded from Registry publishing
+  ---
+  duration_ms: 0.049958
+  ...
+# Subtest: upload receipt supplies path only for unbound ON Campaigns
+ok 21 - upload receipt supplies path only for unbound ON Campaigns
+  ---
+  duration_ms: 1.076152
+  ...
+# Subtest: actual validation routes reject anonymous/participant before proxying and stream Owner bytes
+ok 22 - actual validation routes reject anonymous/participant before proxying and stream Owner bytes
+  ---
+  duration_ms: 16.652234
+  ...
+# Subtest: validation upload requires explicit consent, ZIP size and checksum
+ok 23 - validation upload requires explicit consent, ZIP size and checksum
+  ---
+  duration_ms: 0.810236
+  ...
+# Subtest: stream rejects oversized and truncated requests
+ok 24 - stream rejects oversized and truncated requests
+  ---
+  duration_ms: 6.164427
+  ...
+1..104
+# tests 104
+# pass 104
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4434.314368

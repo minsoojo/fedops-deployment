@@ -1,0 +1,16 @@
+test_classic_runtime_is_persisted_on_task_pvc (test_runtime_bootstrap.RuntimeBootstrapTest) ... ok
+test_hostpath_storage_node_cannot_be_implicit (test_runtime_bootstrap.RuntimeBootstrapTest) ... ok
+test_hostpath_storage_node_is_explicit (test_runtime_bootstrap.RuntimeBootstrapTest) ... ok
+test_runtime_packages_match_proven_legacy_versions (test_runtime_bootstrap.RuntimeBootstrapTest) ... ok
+test_server_import_contract_is_checked_before_ready (test_runtime_bootstrap.RuntimeBootstrapTest) ... ok
+test_arbitrary_version_or_revision_is_rejected (test_runtime_profiles.RuntimeProfilesTest) ... ok
+test_evaluation_revision_is_explicit_and_old_v3_stays_pinned (test_runtime_profiles.RuntimeProfilesTest) ... ok
+test_federated_task_v2_is_explicit (test_runtime_profiles.RuntimeProfilesTest) ... ok
+test_federated_task_v3_pins_agent_studio_participation_runtime (test_runtime_profiles.RuntimeProfilesTest) ... ok
+test_omitted_contract_is_legacy (test_runtime_profiles.RuntimeProfilesTest) ... ok
+test_onprem_revision_is_explicit_and_keeps_old_profiles (test_runtime_profiles.RuntimeProfilesTest) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+OK

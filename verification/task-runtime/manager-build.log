@@ -1,0 +1,43 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 491B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 162B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913
+#4 resolve docker.io/library/python@sha256:da5aee29682d12a6649f51c8d6f15b87deb3e6c524b923c41d0cb3304d07c913 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 12.61kB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /FedOps-Server/server_manager
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt requirements.lock ./
+#7 CACHED
+
+#8 [4/5] RUN python -m pip install --no-cache-dir -r requirements.lock && python -m pip check && python -m pip freeze > /image-requirements.txt
+#8 CACHED
+
+#9 [5/5] COPY . .
+#9 DONE 0.0s
+
+#10 exporting to image
+#10 exporting layers 0.1s done
+#10 exporting manifest sha256:50a7fd6f9062dce01297cdddd0d286e68838fc6ba8df2e58bf5bd54837161ee8 0.0s done
+#10 exporting config sha256:ad77b256044b4dfec565cca43be27cf31b287c8da76780a597497afdbf032e8a 0.0s done
+#10 exporting attestation manifest sha256:33dbfd862a730104621c156d367cc0e5794f4af0115302cf59c3dfadd6a87998 0.0s done
+#10 exporting manifest list sha256:b3f0c284713085fac5e921d7f829978b529b2f8fa53b8f497e80e051d874deb4 0.0s done
+#10 naming to docker.io/fedops-local/manager:task-onprem-20260916
+#10 naming to docker.io/fedops-local/manager:task-onprem-20260916 done
+#10 unpacking to docker.io/fedops-local/manager:task-onprem-20260916 0.0s done
+#10 DONE 0.3s

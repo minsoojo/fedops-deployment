@@ -1,0 +1,4 @@
+docker.io/minsoojo/fedops-onprem@sha256:601076e08db0c4fb3988c97a60b522c4ed4179b54d94baa7648cae81decf234f: Pulling from minsoojo/fedops-onprem
+Digest: sha256:601076e08db0c4fb3988c97a60b522c4ed4179b54d94baa7648cae81decf234f
+Status: Image is up to date for minsoojo/fedops-onprem@sha256:601076e08db0c4fb3988c97a60b522c4ed4179b54d94baa7648cae81decf234f
+docker.io/minsoojo/fedops-onprem@sha256:601076e08db0c4fb3988c97a60b522c4ed4179b54d94baa7648cae81decf234f

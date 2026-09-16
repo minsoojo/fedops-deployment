@@ -1,0 +1,94 @@
+The push refers to repository [docker.io/minsoojo/fedops-onprem]
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+795dbedde24d: Waiting
+795dbedde24d: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+89d573bf42b3: Layer already exists
+795dbedde24d: Layer already exists
+26dfe2fac1c4: Waiting
+79d5bd8a8d26: Waiting
+26dfe2fac1c4: Waiting
+79d5bd8a8d26: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+26dfe2fac1c4: Waiting
+79d5bd8a8d26: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Waiting
+081ccf923272: Waiting
+26dfe2fac1c4: Waiting
+79d5bd8a8d26: Waiting
+8c5db999b586: Waiting
+44136fa355b3: Already exists
+26dfe2fac1c4: Layer already exists
+79d5bd8a8d26: Layer already exists
+8c5db999b586: Waiting
+c9723aa529b0: Waiting
+081ccf923272: Waiting
+91c91c91f1d2: Waiting
+c9723aa529b0: Waiting
+081ccf923272: Waiting
+91c91c91f1d2: Waiting
+8c5db999b586: Waiting
+8c5db999b586: Waiting
+c9723aa529b0: Layer already exists
+081ccf923272: Layer already exists
+91c91c91f1d2: Layer already exists
+8ad27c4f1dba: Waiting
+6bdcbc2126ca: Waiting
+8ad27c4f1dba: Waiting
+6bdcbc2126ca: Waiting
+25c4faf87fe6: Waiting
+25c4faf87fe6: Layer already exists
+e6ed33816fb2: Waiting
+8ad27c4f1dba: Layer already exists
+6bdcbc2126ca: Layer already exists
+e6ed33816fb2: Waiting
+e6ed33816fb2: Waiting
+e6ed33816fb2: Waiting
+e6ed33816fb2: Waiting
+8c5db999b586: Pushed
+e6ed33816fb2: Pushed
+manager-task-onprem-20260916: digest: sha256:b3f0c284713085fac5e921d7f829978b529b2f8fa53b8f497e80e051d874deb4 size: 856

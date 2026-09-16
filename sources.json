@@ -8,13 +8,13 @@
   {
     "name": "fedops-web-onprem",
     "url": "https://github.com/minsoojo/fedops-web-onprem",
-    "commit": "d51644b1659e7b438bcc59a746cbafa22e5a058a",
+    "commit": "c371ac2c4d894fc902022287fa984a162e7052f5",
     "private": true
   },
   {
     "name": "fedops-server-onprem",
     "url": "https://github.com/minsoojo/fedops-server-onprem",
-    "commit": "677be801c33e8d5d53e1aedd27c3f152f1d606f3",
+    "commit": "c39aa34c460d46055035d055766d002504eb7818",
     "private": true
   },
   {
