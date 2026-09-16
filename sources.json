@@ -3,7 +3,7 @@
     "name": "fedops-core-onprem",
     "url": "https://github.com/minsoojo/fedops-core-onprem",
     "commit": "ff5f44ddea2705c8d901a54a0272f517822da8f4",
-    "private": true
+    "private": false
   },
   {
     "name": "fedops-web-onprem",

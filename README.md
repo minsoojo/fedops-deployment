@@ -4,6 +4,8 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 
 ## 현재 상태
 
+- core 저장소는 Public으로 전환해 Task의 Git 인증이 불필요합니다. 다른 소스 저장소·Docker Hub의 공개 범위는 변경하지 않았습니다. [확인 기록](verification/core-public.json).
+
 - 후속 [Web·Manager 연결](TASK_RUNTIME.md) 완료: 새 Baseline 0.19.1/core 고정 조합, Backend 104·Manager 17개 검사와 두 이미지 재게시·digest 대조. F/FL 검증은 별도.
 
 - Chart 0.1.0 정적 검사 540개, 기본 자원 42개.

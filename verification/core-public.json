@@ -1,0 +1,32 @@
+{
+  "verifiedAtUTC": "2026-09-16T07:19:46.174417+00:00",
+  "repository": "minsoojo/fedops-core-onprem",
+  "url": "https://github.com/minsoojo/fedops-core-onprem",
+  "previousPrivate": true,
+  "private": false,
+  "unchangedCommit": "ff5f44ddea2705c8d901a54a0272f517822da8f4",
+  "reviewedCommits": 1,
+  "reviewedFiles": 71,
+  "anonymousRepositoryRead": true,
+  "anonymousCommitRead": true,
+  "action": "PATCH /repos/minsoojo/fedops-core-onprem",
+  "body": {
+    "private": false
+  },
+  "scope": "Only core visibility changed; no image rebuild, F change, or other repository visibility change",
+  "anonymousGitLsRemote": {
+    "command": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "http.extraHeader=",
+      "ls-remote",
+      "https://github.com/minsoojo/fedops-core-onprem.git",
+      "refs/heads/main"
+    ],
+    "exitCode": 0,
+    "revision": "ff5f44ddea2705c8d901a54a0272f517822da8f4",
+    "credentialHelperDisabled": true
+  }
+}

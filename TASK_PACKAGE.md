@@ -27,6 +27,10 @@ Windows 11 / Python 3.12.10 / uv 0.8.13, 프로젝트별 `.venv`에서 수행했
 
 [정확한 명령·결과](verification/task-dependency.json). 설치 시 이 PC의 기존 Git 인증을 사용했다. 토큰은 소스·lock·문서에 넣지 않았다.
 
+## Core 접근 방식 갱신
+
+2026-09-16 후속: 사용자의 명시 요청으로 `minsoojo/fedops-core-onprem`만 Public으로 전환했다. 고정 commit과 이미지 digest는 유지하며, 인증을 끈 Git 조회가 성공했다. Task/참여 클라이언트의 core 설치에는 GitHub 토큰·SSH 키가 필요 없다. 다른 저장소와 Docker Hub는 비공개를 유지한다.
+
 ## 당시 다음 작업과 완료 경계
 
 후속으로 [Web·Manager 연결과 이미지 게시](TASK_RUNTIME.md)를 완료했다. 아래는 의존성 변경 단계 당시의 경계다.

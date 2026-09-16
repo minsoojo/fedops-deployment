@@ -32,4 +32,8 @@
 
 새 태그는 `minsoojo/fedops-onprem:backend-task-onprem-20260916` 및 `manager-task-onprem-20260916`이다. 실제 배포 설정은 [이미지 overlay](charts/fedops/examples/images-minsoojo.yaml)의 digest를 사용한다. 나머지 4개 앱 이미지는 이전 digest를 유지한다.
 
-F에는 아직 적용하지 않았다. 다음은 F의 이미지 pull 인증과 Task/참여 클라이언트의 비공개 Git 접근 방법 준비, 사용자 직접 설치 및 실제 Task 생성·FL 통신·모델 저장/복원 검증이다. 이번 검사는 실제 Kubernetes·FL 통합 성공을 뜻하지 않는다. Git 토큰이나 Secret을 이미지·values에 포함하지 않았다.
+F에는 아직 적용하지 않았다. 다음은 F의 이미지 pull 인증과 기반 네트워크 준비, 사용자 직접 설치 및 실제 Task 생성·FL 통신·모델 저장/복원 검증이다. 이번 검사는 실제 Kubernetes·FL 통합 성공을 뜻하지 않는다. Git 토큰이나 Secret을 이미지·values에 포함하지 않았다.
+
+## Core 공개 전환
+
+2026-09-16 후속: 사용자의 명시 요청으로 `minsoojo/fedops-core-onprem`만 Public으로 전환했다. 고정 commit과 이미지 digest는 유지하며, 인증을 끈 Git 조회가 성공했다. Task/참여 클라이언트의 core 설치에는 GitHub 토큰·SSH 키가 필요 없다. 다른 저장소와 Docker Hub는 비공개를 유지한다. [확인 기록](verification/core-public.json).
