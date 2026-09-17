@@ -161,6 +161,9 @@ def main():
     check([s["port"]["number"] for s in gateway["spec"]["servers"]][1:] == list(range(40026, 40040)), "all 14 existing FL listeners")
     for vs in by_kind["VirtualService"]:
         for rule in vs["spec"]["http"]:
+            # Istio 1.30 CRD CEL rejects explicit 0s; omission disables the
+            # request timeout. jsonschema alone does not execute CEL rules.
+            check("timeout" not in rule, "HTTP request timeout omitted for streaming and Istio CEL compatibility")
             check("rewrite" not in rule, "HTTP/S3 path and host not rewritten")
             for route in rule["route"]:
                 destination = route["destination"]

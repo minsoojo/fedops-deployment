@@ -80,7 +80,7 @@ Secret 내용 변경은 checksum에 포함되지 않는다. 반영 시 필요한
 
 ## 4. 연결과 라우팅
 
-- Web host의 `/fedops/api`, `/fedops/api/*`, `/socket.io`, `/socket.io/*`는 Backend로 전달한다. 나머지는 Frontend로 전달한다. API/SSE/Socket route의 timeout은 0이며 URI를 바꾸지 않는다.
+- Web host의 `/fedops/api`, `/fedops/api/*`, `/socket.io`, `/socket.io/*`는 Backend로 전달한다. 나머지는 Frontend로 전달한다. HTTP route의 `timeout`은 생략해 요청 시간 제한이 비활성인 [Istio 기본 동작](https://istio.io/latest/docs/tasks/traffic-management/request-timeouts/)을 사용하며 URI를 바꾸지 않는다. Istio 1.30.4 CRD는 명시적인 `timeout: 0s`를 거부하므로 넣지 않는다.
 - Manager·Performance·Registry는 각 host에서 기존 경로 그대로 전달한다.
 - MinIO는 전용 host에서 bucket/key와 Host를 보존한다. SDK는 내부 Service로 저장/조회하고 외부 endpoint로 처음부터 서명한다. 서명 후 host 치환을 하지 않는다. console 9001은 외부 route에 넣지 않는다.
 - HTTP Gateway와 FL TCP listener는 Chart가 만들지만, **실제 Istio ingress Kubernetes Service의 포트도 기반 구성 단계에서 동일하게 열어야 한다.** 현재 기본 HTTP 80(HTTPS 선택 시 443) 및 TCP 40026~40039. values만 바꿔서는 기반 Service·방화벽이 변경되지 않는다.

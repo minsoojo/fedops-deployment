@@ -46,7 +46,6 @@ spec:
         - uri: {exact: /fedops/api}
         - uri: {prefix: /socket.io/}
         - uri: {exact: /socket.io}
-      timeout: 0s
       route:
         - destination:
             host: {{ $roles.backend.service }}.{{ .Release.Namespace }}.svc.cluster.local
@@ -68,8 +67,7 @@ spec:
   hosts: [{{ index $.Values.access $hostKey | quote }}]
   gateways: [{{ printf "%s-gateway" $.Release.Name | quote }}]
   http:
-    - timeout: 0s
-      route:
+    - route:
         - destination:
             host: {{ $s.service }}.{{ $.Release.Namespace }}.svc.cluster.local
             port: {number: {{ $s.servicePort }}}
