@@ -1,5 +1,7 @@
 # FedOps 인증메일 설정
 
+2026-09-17 F 적용 완료: Chart 0.1.2/revision 4 deployed. Web 발송→Mailpit 수신→Gateway 코드 검증 성공. 현재 SMTP 모드는 Mailpit이며 실제 외부 메일함 전송은 미설정이다.
+
 ## 원본 방식과 변경점
 
 원본은 `Web → Java Gateway → Gmail SMTP(587/STARTTLS) → 수신 메일함`이었다.

@@ -40,9 +40,9 @@ F는 테스트용 Mailpit:1025로 전송 중이다. 2026-09-17 05:26 UTC 메일 
 
 - [x] 원본 확인·계획 보고
 - [x] 구현 및 로컬 검증
-- [ ] 소스·이미지·차트 게시
-- [ ] F 적용 및 메일 검증
-- [ ] 실제 외부 메일함 수신 (외부 SMTP 선택 시 별도 확인)
+- [x] 소스·이미지·차트 게시
+- [x] F 적용 및 메일 검증
+- 외부 메일함 수신: SMTP 계정 미선택으로 범위 밖. Mailpit 모드 유지, 외부 SMTP 전환 시 별도 확인.
 
 기술 근거: [Spring 메일](https://docs.spring.io/spring-framework/reference/integration/email.html),
 [SMTP 옵션](https://eclipse-ee4j.github.io/angus-mail/docs/api/org.eclipse.angus.mail/org/eclipse/angus/mail/smtp/package-summary.html),
@@ -50,4 +50,18 @@ F는 테스트용 Mailpit:1025로 전송 중이다. 2026-09-17 05:26 UTC 메일 
 
 ## 로컬 완료 증빙
 
-Java 단위 검사 4개와 발신자 3개 프로필(명시 주소/한국어 이름/로그인 계정 fallback)의 Gateway·Redis·Mailpit 수신·코드 검증 통과. Chart 검사 635개 통과. `docs/helm/evidence/gateway-mail.json` 및 `chart-verification.json`에 기록. Gateway `964ede9`와 Docker Hub digest `sha256:42b21b3c35760d40c402095d5fd6e38daba3d3cf03c7fdb6bffe94eaa636f92e` 게시·재다운로드 대조 완료. 외부 SMTP 미선택이므로 F는 Mailpit 유지.
+Java 단위 검사 4개와 발신자 3개 프로필(명시 주소/한국어 이름/로그인 계정 fallback)의 Gateway·Redis·Mailpit 수신·코드 검증 통과. Chart 검사 635개 통과. `docs/helm/verification/gateway-mail.json` 및 `chart-verification.json`에 기록. Gateway `964ede9`와 Docker Hub digest `sha256:42b21b3c35760d40c402095d5fd6e38daba3d3cf03c7fdb6bffe94eaa636f92e` 게시·재다운로드 대조 완료. 외부 SMTP 미선택이므로 F는 Mailpit 유지.
+
+## F 실행 결과
+
+2026-09-17 사용자 실행 요청에 따라 F에 Chart 0.1.2/revision 4를 적용했다. 기본 앱 Deployment 9개 Available,
+기존 PVC 3개 Bound 및 Backend Mongo 연결 확인. Web IP의 메일 발송 API 200 → Mailpit 수신 → 명시된 From
+`FedOps Test <noreply@fedops.test>` 확인 → Gateway 정상 코드 승인/잘못된 코드 거부까지 성공했다.
+인증코드·메일 본문은 출력/증빙에 기록하지 않았다. 검증 코드 요청은 기존 Web 요청 로거 노출을 피하기 위해 Gateway에 직접 전달했다.
+
+메일 미표시 조사: F Mailpit에는 요청 시점의 메일이 도착했지만 PC localhost:8025 터널이 없었고,
+브라우저 URL에 예전 Pod의 검색 조건이 있었다. SSH 터널을 복구하고 검색 없는 메일함 URL을 열도록 요청했다.
+PC에서 Web HTTP 200 및 Mailpit 새 발신자 메시지를 확인했다.
+
+[F 결과](verification/gateway-mail-f.json) · [설정 가이드](SMTP_CONFIGURATION.md).
+SSH/API 원문은 `docs/helm/evidence/f-ip-access/mail-*.json`, 로컬 검증은 `verification/gateway-mail.json`이다.

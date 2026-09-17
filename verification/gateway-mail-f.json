@@ -1,0 +1,27 @@
+{
+  "checkedAtUTC": "2026-09-17T05:48:07.918500+00:00",
+  "target": "F / fedops-f / namespace fedops / release fedops",
+  "revision": 4,
+  "chart": "fedops-0.1.2",
+  "status": "deployed",
+  "deploymentCommit": "33dd2d262940779315a8addb9ff7cef99d74cfe4",
+  "gatewayDigest": "sha256:42b21b3c35760d40c402095d5fd6e38daba3d3cf03c7fdb6bffe94eaa636f92e",
+  "mailMode": "Mailpit test reception; no external SMTP account chosen",
+  "sender": "FedOps Test <noreply@fedops.test>",
+  "checks": [
+    "9 Chart deployments Available; Mailpit remains Available",
+    "3 PVCs Bound",
+    "Web IP email request 200",
+    "Mailpit received explicit From",
+    "Gateway accepts received code and rejects wrong code",
+    "Backend Mongo connected",
+    "PC Web IP HTTP 200",
+    "PC localhost Mailpit reachable and new sender visible"
+  ],
+  "codesOrBodiesRecorded": false,
+  "scopeNotes": [
+    "Verification code checked directly against Gateway to avoid existing Web request logger recording the code",
+    "External Gmail/institution mailbox delivery not configured/tested",
+    "PC Mailpit uses restored SSH tunnel; Web direct IP does not need that tunnel"
+  ]
+}

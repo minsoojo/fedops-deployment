@@ -1,6 +1,6 @@
 # FedOps 온프레미스 배포
 
-**메일 설정 후속(Chart 0.1.2):** 원본 Gateway→SMTP/Redis 흐름을 유지하며 서버·포트·인증·TLS·발신자 주소/이름을 Helm에서 설정한다. [SMTP 가이드](SMTP_CONFIGURATION.md) · [계획](MAIL_CONFIG_PLAN.md) · [검증](verification/gateway-mail.json). 기존 F IP 접속은 revision 3에 적용 완료됐으며, SMTP 후속은 현재 게시 후 적용 단계다.
+**메일 설정 후속(Chart 0.1.2):** 원본 Gateway→SMTP/Redis 흐름을 유지하며 서버·포트·인증·TLS·발신자 주소/이름을 Helm에서 설정한다. [SMTP 가이드](SMTP_CONFIGURATION.md) · [계획](MAIL_CONFIG_PLAN.md) · [검증](verification/gateway-mail.json). 기존 F IP 접속은 revision 3에 적용 완료됐으며, SMTP 후속도 revision 4에 적용하고 Web 발송·Mailpit 수신·코드 검증을 확인했다. [F 결과](verification/gateway-mail-f.json).
 
 **최신 후속(2026-09-17): Chart 0.1.1 IP 접속 지원.** `http://192.9.201.220/fedops/`를 해당 IP에 접근 가능한 기기에서 hosts/Lens 설정 없이 사용한다. [F 적용 명령](F_IP_ACCESS.md) · [계획/결과](IP_ACCESS_PLAN.md) · [로컬 검증](verification/ip-access-integration.json). 기존 도메인 모드는 옵션으로 유지하며 F용 마지막 overlay에서 IP 모드를 선택한다. F 적용과 새 기기의 실제 브라우저 확인은 아직 남아 있다.
 
