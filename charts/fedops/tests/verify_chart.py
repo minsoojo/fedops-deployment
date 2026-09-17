@@ -156,7 +156,10 @@ def main():
     check(cms["fedops-backend"]["S3_PUBLIC_ENDPOINT_URL"] == cms["fedops-registry"]["AWS_S3_PUBLIC_ENDPOINT_URL"], "same externally signed object endpoint")
     check("ACCESS_SECRET_KEY" not in yaml.safe_dump(cms), "credentials absent from ConfigMaps/browser")
     browser = json.loads(cms["fedops-browser"]["runtime-config.js"].split("=", 1)[1].strip().rstrip(";"))
-    check(browser == {"apiOrigin": "http://web.example.invalid", "socketUrl": "http://web.example.invalid"}, "public browser API and Socket URL")
+    check(browser == {"objectStorageOrigin": "http://objects.example.invalid"}, "browser API/socket use current origin; only signed storage origin is advertised")
+    check(cms["fedops-frontend"]["OBJECT_STORAGE_PROXY_TARGET"] == cms["fedops-backend"]["S3_ENDPOINT_URL"], "frontend download proxy uses internal S3 endpoint")
+    check(cms["fedops-frontend"]["OBJECT_STORAGE_PUBLIC_ORIGIN"] == browser["objectStorageOrigin"], "download proxy restores the S3 signing host")
+    check(cms["fedops-frontend"]["WDS_SOCKET_PORT"] == "0", "frontend development socket uses forwarded browser port")
     gateway = by_kind["Gateway"][0]
     check([s["port"]["number"] for s in gateway["spec"]["servers"]][1:] == list(range(40026, 40040)), "all 14 existing FL listeners")
     for vs in by_kind["VirtualService"]:

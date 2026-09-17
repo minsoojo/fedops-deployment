@@ -1,0 +1,29 @@
+{
+  "checkedAtUTC": "2026-09-17T04:41:20.033944+00:00",
+  "scope": "Local disposable Docker, loopback HTTP and real app/DB/S3; no DNS/hosts or F changes; no browser GUI E2E",
+  "command": "python -B work/verify_frontend_forwarding.py",
+  "frontendImage": "fedops-local/frontend:localhost-20260917",
+  "checks": [
+    "frontend compilation",
+    "runtime same-origin",
+    "register/login/logout",
+    "cookie-authenticated API",
+    "authenticated Socket.IO polling and WebSocket",
+    "S3 signed download preserves signature",
+    "invalid S3 signature denied",
+    "download proxy rejects writes"
+  ],
+  "passed": true,
+  "sourceCommit": "4e288c63e0d6c76c42ced2cb09817cd3eca2e565",
+  "publishedImage": "docker.io/minsoojo/fedops-onprem@sha256:de098c75cc6556e2f20903d2dfef0e90e3e96752191b91e9b66d34c727793fc1",
+  "publishedTag": "frontend-localhost-20260917",
+  "digestPullMatchesLocalImage": true,
+  "runtimeConfigTests": 3,
+  "chartAssertions": 549,
+  "buildCommand": "docker --context desktop-linux build --platform linux/amd64 --progress plain -t fedops-local/frontend:localhost-20260917 work/localhost-frontend-context",
+  "frontendSourceSha256": {
+    "src/setupProxy.js": "9baa2d84e616aec14c0f95656dd76e44d5f042d1bbdf8b6dbc849f751f089b74",
+    "src/lib/runtimeConfig.js": "813d3932883b09afba34899ac384144bb7452a2f5d42cace5da5c2c06c9529c6",
+    "src/lib/runtimeConfig.test.js": "4df149875c746566a67649d824ed7f8aa1d125ec3cd9a94ae90d94b0b834405f"
+  }
+}

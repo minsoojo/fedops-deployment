@@ -4,11 +4,13 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 
 ## 현재 상태
 
+- 2026-09-17 Lens/localhost 지원: Frontend 포트 하나로 API·로그인 쿠키·Socket.IO·서명 파일 다운로드를 사용한다. API/Socket 주소는 현재 브라우저 origin이며 hosts 설정이 필요 없다. 로컬 실제 앱/DB/MinIO 통합 검사와 설정 회귀 검사 3개, Chart 검사 549개 통과. 새 Frontend digest는 이미지 overlay에 반영했다. [검증 범위·결과](verification/frontend-localhost.json). F 적용은 사용자가 수행하며 실제 F 브라우저 성공은 아직 미확인이다.
+
 - core 저장소는 Public으로 전환해 Task의 Git 인증이 불필요합니다. 다른 소스 저장소·Docker Hub의 공개 범위는 변경하지 않았습니다. [확인 기록](verification/core-public.json).
 
 - 후속 [Web·Manager 연결](TASK_RUNTIME.md) 완료: 새 Baseline 0.19.1/core 고정 조합, Backend 104·Manager 17개 검사와 두 이미지 재게시·digest 대조. F/FL 검증은 별도.
 
-- Chart 0.1.0 정적 검사 546개, 기본 자원 42개. 2026-09-17 F에서 발견된 HTTP 라우팅 오류를 수정했다: Istio 1.30.4 CRD가 거부하는 `timeout: 0s`를 제거하고 요청 시간 제한이 비활성인 기본값을 사용한다. 기존 일반 JSON Schema 검사는 CEL 규칙을 실행하지 않아 이 오류를 놓쳤으며, timeout 생략 회귀 검사를 추가했다. 수정 후 F 갱신·브라우저 재확인은 아직 남아 있다.
+- Chart 0.1.0 정적 검사 549개, 기본 자원 42개. 2026-09-17 F에서 발견된 HTTP 라우팅 오류를 수정했다: Istio 1.30.4 CRD가 거부하는 `timeout: 0s`를 제거하고 요청 시간 제한이 비활성인 기본값을 사용한다. 기존 일반 JSON Schema 검사는 CEL 규칙을 실행하지 않아 이 오류를 놓쳤으며, timeout 생략 회귀 검사를 추가했다. 이후 기존 도메인의 Web HTML HTTP 200을 확인했다.
 - 앱 6종 로컬 이미지 빌드·기동, Mongo 인증·Web SDK/MinIO 왕복 포함 12개 검사 통과.
 - core wheel 생성·45개 Python 파일 대조 완료. 실제 Task Runtime 연결·F/FL 검증은 남아 있습니다.
 - Docker Hub `minsoojo/fedops-onprem` 비공개 저장소에 앱 6종 게시·digest 재다운로드·기존 빌드 ID 대조 완료. [게시 기록](DOCKER_HUB.md) · [Helm 이미지 설정](charts/fedops/examples/images-minsoojo.yaml).
@@ -16,12 +18,27 @@ Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 up
 
 - Baseline 0.19.1은 새 core commit에 고정했고 로컬 설치·기존 테스트 14개를 통과했습니다. Web/Manager 연결은 후속 완료했고 F 검증은 남아 있습니다. [변경 기록](TASK_PACKAGE.md).
 
+## F에서 Lens localhost 지원 적용
+
+기존 F 설치의 사용자 실행 명령이다. 이전 이미지 설정 사본 대신 이 저장소의 최신 overlay를 사용한다.
+
+```bash
+git -C ~/fedops-deployment pull --ff-only
+helm upgrade --install fedops ~/fedops-deployment/charts/fedops \
+  --namespace fedops --kube-context fedops-f \
+  -f ~/fedops-f-values.yaml \
+  -f ~/fedops-deployment/charts/fedops/examples/images-minsoojo.yaml \
+  --wait --timeout 5m
+```
+
+deployed 확인 후 Lens에서 기존 포워딩을 닫고 `fedops-web-frontend-service`의 80(또는 새 Frontend Pod의 3000)을 다시 포워딩한다. `http://localhost:<로컬 포트>/fedops/`로 접속한다. hosts 설정·Backend/MinIO 별도 포워딩은 필요 없다. Mailpit 수신함과 외부 FL 클라이언트 통신은 별도다.
+
 ## 소스와 버전
 
 | 저장소 | 기준 commit |
 |---|---|
 | [fedops-core-onprem](https://github.com/minsoojo/fedops-core-onprem) | `ff5f44ddea2705c8d901a54a0272f517822da8f4` |
-| [fedops-web-onprem](https://github.com/minsoojo/fedops-web-onprem) | `c371ac2c4d894fc902022287fa984a162e7052f5` |
+| [fedops-web-onprem](https://github.com/minsoojo/fedops-web-onprem) | `4e288c63e0d6c76c42ced2cb09817cd3eca2e565` |
 | [fedops-server-onprem](https://github.com/minsoojo/fedops-server-onprem) | `c39aa34c460d46055035d055766d002504eb7818` |
 | [fedops-gateway-onprem](https://github.com/minsoojo/fedops-gateway-onprem) | `e64d3bee896264ce9e0ce9de71a15fc76b4e2088` |
 | [fedops-registry-onprem](https://github.com/minsoojo/fedops-registry-onprem) | `548c5fbb4e0af0883d5b76fbefc2b5caecd9c63f` |

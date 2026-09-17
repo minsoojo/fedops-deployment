@@ -17,8 +17,10 @@ data:
   HOST: "0.0.0.0"
   PORT: "3000"
   BROWSER: "none"
-  WDS_SOCKET_PORT: {{ ternary "443" "80" (eq $.Values.access.scheme "https") | quote }}
+  WDS_SOCKET_PORT: "0"
   WEB_BACKEND_PROXY_TARGET: {{ include "fedops.url" (dict "root" $ "role" "backend") | quote }}
+  OBJECT_STORAGE_PROXY_TARGET: {{ $minio | quote }}
+  OBJECT_STORAGE_PUBLIC_ORIGIN: {{ $objects | quote }}
   {{- else if eq $role "backend" }}
   NODE_ENV: "production"
   PORT: "4000"
@@ -88,4 +90,4 @@ metadata:
     {{- include "fedops.labels" . | nindent 4 }}
 data:
   runtime-config.js: |
-    window.__FEDOPS_CONFIG__ = {{ dict "apiOrigin" $web "socketUrl" $web | toJson }};
+    window.__FEDOPS_CONFIG__ = {{ dict "objectStorageOrigin" $objects | toJson }};

@@ -80,6 +80,9 @@ Secret 내용 변경은 checksum에 포함되지 않는다. 반영 시 필요한
 
 ## 4. 연결과 라우팅
 
+- Lens에서 Frontend Pod의 3000 또는 Service의 80을 로컬 포트로 연결하면 `http://localhost:<port>/fedops/`로 접속한다. API/Socket은 현재 브라우저 origin을 사용하며 Frontend의 기존 Backend 프록시를 통과한다. hosts 설정은 필요 없다. 개발 서버의 WDS socket port도 0(현재 페이지 포트)으로 지정한다.
+- 모델·파일의 서명 다운로드는 `/fedops/objects`를 통해 내부 MinIO로 전달한다. 브라우저에는 서명 대상 origin 식별값만 제공하며, 프록시는 원래 서명 Host/경로/쿼리를 유지한다. 새 Frontend 이미지와 함께 적용해야 한다. 외부 FL 클라이언트 TCP/Manager 접근은 별도다.
+
 - Web host의 `/fedops/api`, `/fedops/api/*`, `/socket.io`, `/socket.io/*`는 Backend로 전달한다. 나머지는 Frontend로 전달한다. HTTP route의 `timeout`은 생략해 요청 시간 제한이 비활성인 [Istio 기본 동작](https://istio.io/latest/docs/tasks/traffic-management/request-timeouts/)을 사용하며 URI를 바꾸지 않는다. Istio 1.30.4 CRD는 명시적인 `timeout: 0s`를 거부하므로 넣지 않는다.
 - Manager·Performance·Registry는 각 host에서 기존 경로 그대로 전달한다.
 - MinIO는 전용 host에서 bucket/key와 Host를 보존한다. SDK는 내부 Service로 저장/조회하고 외부 endpoint로 처음부터 서명한다. 서명 후 host 치환을 하지 않는다. console 9001은 외부 route에 넣지 않는다.
