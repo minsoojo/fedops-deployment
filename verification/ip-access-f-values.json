@@ -1,0 +1,52 @@
+{
+  "checkedAtUTC": "2026-09-17T05:08:49.151670+00:00",
+  "commands": [
+    [
+      "work/helm-tools/windows-amd64/helm.exe",
+      "lint",
+      "charts/fedops",
+      "-f",
+      "docs/guide/f-test/values.yaml",
+      "-f",
+      "charts/fedops/examples/images-minsoojo.yaml",
+      "-f",
+      "charts/fedops/examples/f-ip-access.yaml",
+      "--kube-version",
+      "1.36.0",
+      "--strict"
+    ],
+    [
+      "work/helm-tools/windows-amd64/helm.exe",
+      "template",
+      "fedops",
+      "charts/fedops",
+      "-n",
+      "fedops",
+      "-f",
+      "docs/guide/f-test/values.yaml",
+      "-f",
+      "charts/fedops/examples/images-minsoojo.yaml",
+      "-f",
+      "charts/fedops/examples/f-ip-access.yaml",
+      "--kube-version",
+      "1.36.0"
+    ],
+    [
+      "work/helm-tools/istioctl-1.30.4/istioctl.exe",
+      "validate",
+      "-f",
+      "work\\ip-access-istio.yaml",
+      "--kubeconfig",
+      "work/helm-tools/empty-kubeconfig"
+    ]
+  ],
+  "exitCodes": [
+    0,
+    0,
+    0
+  ],
+  "resources": 38,
+  "oldTestDomainInConfigMaps": false,
+  "scope": "Local Helm template/lint and Istio offline validate with F test values and published images; no cluster connection",
+  "result": ""
+}

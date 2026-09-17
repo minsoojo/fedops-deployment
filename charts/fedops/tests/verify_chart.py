@@ -176,6 +176,32 @@ def main():
     check(not any("*" in r["verbs"] or "*" in r["resources"] or "secrets" in r["resources"] for r in by_kind["Role"][0]["rules"]), "no wildcard/Secret-reading Manager RBAC")
 
     # A different release/environment must flow through references and browser config.
+    single = render(["-f", CHART / "examples/f-ip-access.yaml"])
+    validate_all(single)
+    single_vs = [d for d in single if d["kind"] == "VirtualService"]
+    check(len(single_vs) == 1, "single origin has one HTTP VirtualService")
+    check(single_vs[0]["spec"]["hosts"] == ["192.9.201.220"], "IP is the HTTP route host")
+    sg = next(d for d in single if d["kind"] == "Gateway")
+    check(sg["spec"]["servers"][0]["hosts"] == ["192.9.201.220"], "Gateway accepts the IP host")
+    check(sg["spec"]["servers"][1:] == gateway["spec"]["servers"][1:], "single origin preserves FL TCP listeners")
+    sc = {d["metadata"]["name"]: d["data"] for d in single if d["kind"] == "ConfigMap"}
+    check(sc["fedops-backend"]["FL_SERVER_MANAGER_PUBLIC_URL"] == "http://192.9.201.220/fedops/services/manager", "public Manager URL uses IP service prefix")
+    check(sc["fedops-backend"]["S3_PUBLIC_ENDPOINT_URL"] == "http://192.9.201.220", "S3 signing uses IP root")
+    check(sc["fedops-backend"]["CORS_ORIGINS"] == "http://192.9.201.220", "CORS accepts IP origin")
+    sr = {r["name"]: r for r in single_vs[0]["spec"]["http"]}
+    check(list(sr) == ["manager", "performance", "registry", "objects", "backend", "web"], "specific routes precede UI fallback")
+    for role in ["manager", "performance", "registry"]:
+        check(sr[role]["rewrite"] == {"uri": "/"}, role + " removes service prefix")
+        check(sr[role]["match"] == [{"uri": {"prefix": f"/fedops/services/{role}/"}}, {"uri": {"exact": f"/fedops/services/{role}"}}], role + " matches path boundaries")
+    check("rewrite" not in sr["objects"], "signed S3 Host/path are not rewritten")
+    check(len(sr["objects"]["match"]) == 10, "all five buckets have exact and bounded prefix routes")
+    for rule in sr.values():
+        check("timeout" not in rule, "single origin timeout omitted")
+        destination = rule["route"][0]["destination"]
+        check(destination["port"]["number"] in [p["port"] for p in services[destination["host"].split(".")[0]]["spec"]["ports"]], "single origin points to existing Service port")
+    render(["--set", "access.singleOrigin=true,access.objectsHost=web.example.invalid"])
+    render(["--set", "access.singleOrigin=true,access.managerHost=,access.performanceHost=,access.registryHost=,access.objectsHost="])
+
     alternate = render(["--set", "nodeName=f-alternate,access.webHost=alternate.example.invalid,task.portMin=41000,task.portMax=41002"], namespace="isolated", release="check")
     validate_all(alternate)
     check(all(d["metadata"].get("namespace", "isolated") == "isolated" for d in alternate), "alternate namespace propagates")
@@ -199,6 +225,8 @@ def main():
         "unknown setting": "unexpected=true",
         "host containing URL": "access.webHost=http://bad.invalid",
         "duplicate HTTP hosts": "access.objectsHost=web.example.invalid",
+        "empty legacy host": "access.objectsHost=",
+        "single origin bucket collision": "access.singleOrigin=true,storage.modelBucket=fedops",
         "reversed port range": "task.portMin=41000,task.portMax=40000",
         "oversized port range": "task.portMin=40000,task.portMax=40200",
         "missing TLS reference": "access.scheme=https",

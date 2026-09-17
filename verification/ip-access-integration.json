@@ -1,0 +1,57 @@
+{
+  "checkedAtUTC": "2026-09-17T05:03:11.951931+00:00",
+  "scope": "Local disposable Docker, loopback HTTP and real app/DB/S3; no DNS/hosts or F changes; no browser GUI E2E",
+  "command": "python -B work/verify_frontend_forwarding.py --single-origin",
+  "frontendImage": "fedops-local/frontend:ip-access-20260917",
+  "routing": "Real Envoy 1.30.4, routes derived from rendered singleOrigin Chart; Manager/performance/Registry targets are echo fixtures",
+  "checks": [
+    "frontend compilation",
+    "runtime same-origin",
+    "register/login/logout",
+    "cookie-authenticated API",
+    "authenticated Socket.IO polling and WebSocket",
+    "S3 signed download preserves signature",
+    "invalid S3 signature denied",
+    "download proxy rejects writes",
+    "IP Host through real Envoy",
+    "raw signed IP S3 download and tamper rejection",
+    "Manager/performance/Registry path rewrite to echo targets",
+    "UI and bucket prefix boundaries"
+  ],
+  "passed": true,
+  "sourceCommit": "1613311e8bb2b094769aaa29494bc2525403e983",
+  "frontendDigest": "sha256:2878636eb4263ccd910e67dcf55161cc73eaf002e070b0dcd922d07bae642789",
+  "frontendTag": "docker.io/minsoojo/fedops-onprem:frontend-ip-access-20260917",
+  "envoyDigest": "sha256:43b6aeab7428470d3d0ea6b6f0bc217e5b36df2b279bba337643df48590226d9",
+  "frontendUnitTests": {
+    "passed": 4,
+    "command": "docker --context desktop-linux run --rm --network none -e CI=true --entrypoint yarn fedops-local/frontend:ip-access-20260917 test --watchAll=false --runInBand --runTestsByPath src/lib/runtimeConfig.test.js"
+  },
+  "istioValidation": {
+    "version": "1.30.4",
+    "command": "work/helm-tools/istioctl-1.30.4/istioctl.exe validate -f work/ip-access-istio.yaml --kubeconfig work/helm-tools/empty-kubeconfig",
+    "exitCode": 0,
+    "result": "work/ip-access-istio.yaml is valid"
+  },
+  "notTested": [
+    "F installation",
+    "browser GUI E2E",
+    "email code verification",
+    "Manager/performance/Registry real business operations",
+    "Studio full E2E",
+    "external FL training"
+  ],
+  "sha256": {
+    "work/verify_frontend_forwarding.py": "075e37083491518019a1e52d93a09cf87d0bd2120da75cc6e633264489bb0c25",
+    "work/ip-access-envoy.json": "4d18c3ce7f93b84d5e15290b3c3819f00b120c8013a08e0f2f08f3ea869b0471",
+    "work/ip-access-istio.yaml": "d3fe8a7911eaebf1eb2d8b44bfca55d24c4261844a13831cdea195658800d405",
+    "repositories/fedops-web-onprem/client/src/lib/runtimeConfig.js": "f9c8a5b75b6bee168d96dee84e09f8241259ab7e40f167a37beb452666be688a",
+    "repositories/fedops-web-onprem/client/src/lib/runtimeConfig.test.js": "968bc3e164c49aab5c536e91f92f5d7b51125f6b5784f53c98861b5f5e01379f"
+  },
+  "publish": {
+    "checkedAtUTC": "2026-09-17T05:08:14.715385+00:00",
+    "pullByDigestMatchedLocalImage": true,
+    "imageId": "sha256:2878636eb4263ccd910e67dcf55161cc73eaf002e070b0dcd922d07bae642789",
+    "webSourcePushed": "1613311e8bb2b094769aaa29494bc2525403e983"
+  }
+}

@@ -73,6 +73,9 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "singleOrigin": {
+          "type": "boolean"
+        },
         "scheme": {
           "enum": [
             "http",
@@ -83,16 +86,44 @@
           "$ref": "#/definitions/host"
         },
         "managerHost": {
-          "$ref": "#/definitions/host"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/host"
+            },
+            {
+              "const": ""
+            }
+          ]
         },
         "performanceHost": {
-          "$ref": "#/definitions/host"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/host"
+            },
+            {
+              "const": ""
+            }
+          ]
         },
         "registryHost": {
-          "$ref": "#/definitions/host"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/host"
+            },
+            {
+              "const": ""
+            }
+          ]
         },
         "objectsHost": {
-          "$ref": "#/definitions/host"
+          "anyOf": [
+            {
+              "$ref": "#/definitions/host"
+            },
+            {
+              "const": ""
+            }
+          ]
         },
         "flHost": {
           "$ref": "#/definitions/host"
@@ -114,6 +145,37 @@
         "objectsHost",
         "flHost",
         "additionalCorsOrigins"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "singleOrigin": {
+                "const": true
+              }
+            },
+            "required": [
+              "singleOrigin"
+            ]
+          },
+          "then": {},
+          "else": {
+            "properties": {
+              "managerHost": {
+                "$ref": "#/definitions/host"
+              },
+              "performanceHost": {
+                "$ref": "#/definitions/host"
+              },
+              "registryHost": {
+                "$ref": "#/definitions/host"
+              },
+              "objectsHost": {
+                "$ref": "#/definitions/host"
+              }
+            }
+          }
+        }
       ]
     },
     "istio": {

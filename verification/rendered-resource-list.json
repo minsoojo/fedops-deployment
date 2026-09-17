@@ -1,0 +1,549 @@
+[
+  {
+    "apiVersion": "v1",
+    "kind": "ServiceAccount",
+    "metadata": {
+      "name": "fedops-manager",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-frontend",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-backend",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-manager",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-performance",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-gateway",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-registry",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "ConfigMap",
+    "metadata": {
+      "name": "fedops-browser",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+      "name": "fedops-fedops-minio-data",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+      "name": "fedops-fedops-mongo-data",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+      "name": "fedops-fedops-registry-mongo-data",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+      "name": "fedops-fedops-minio-data",
+      "namespace": "fedops",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+      "name": "fedops-fedops-mongo-data",
+      "namespace": "fedops",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "PersistentVolumeClaim",
+    "metadata": {
+      "name": "fedops-fedops-registry-mongo-data",
+      "namespace": "fedops",
+      "annotations": {
+        "helm.sh/resource-policy": "keep"
+      },
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "rbac.authorization.k8s.io/v1",
+    "kind": "ClusterRole",
+    "metadata": {
+      "name": "fedops-fedops-manager-pv"
+    }
+  },
+  {
+    "apiVersion": "rbac.authorization.k8s.io/v1",
+    "kind": "ClusterRoleBinding",
+    "metadata": {
+      "name": "fedops-fedops-manager-pv"
+    }
+  },
+  {
+    "apiVersion": "rbac.authorization.k8s.io/v1",
+    "kind": "Role",
+    "metadata": {
+      "name": "fedops-manager",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "rbac.authorization.k8s.io/v1",
+    "kind": "RoleBinding",
+    "metadata": {
+      "name": "fedops-manager",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops-web-backend-service",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops-web-frontend-service",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops-gateway-service",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "server-manager-service",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops1-registry-minio-svc",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops-mongo-np",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fl-perf-service",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops1-registry-svc",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": {
+      "name": "fedops1-registry-mongo-svc",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops-web-backend",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops-web-frontend",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops-gateway",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fl-server-st",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops1-registry-minio",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops-mongo-deploy",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fl-perf",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops1-registry",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "fedops1-registry-mongo",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "Gateway",
+    "metadata": {
+      "name": "fedops-gateway",
+      "namespace": "fedops",
+      "labels": {
+        "app.kubernetes.io/part-of": "fedops",
+        "app.kubernetes.io/instance": "fedops",
+        "app.kubernetes.io/managed-by": "Helm",
+        "helm.sh/chart": "fedops-0.1.1"
+      }
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "VirtualService",
+    "metadata": {
+      "name": "fedops-web",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "VirtualService",
+    "metadata": {
+      "name": "fedops-manager-http",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "VirtualService",
+    "metadata": {
+      "name": "fedops-minio-http",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "VirtualService",
+    "metadata": {
+      "name": "fedops-performance-http",
+      "namespace": "fedops"
+    }
+  },
+  {
+    "apiVersion": "networking.istio.io/v1alpha3",
+    "kind": "VirtualService",
+    "metadata": {
+      "name": "fedops-registry-http",
+      "namespace": "fedops"
+    }
+  }
+]

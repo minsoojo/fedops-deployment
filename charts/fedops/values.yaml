@@ -18,6 +18,7 @@ images:
 # Hosts must be distinct DNS names (or IPv4 addresses), without scheme/port/path.
 # Resolve all HTTP hosts to the separately installed Istio ingress service.
 access:
+  singleOrigin: false
   scheme: http
   webHost: ""
   managerHost: ""

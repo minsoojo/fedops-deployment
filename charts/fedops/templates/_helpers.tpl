@@ -28,7 +28,12 @@ helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version | quote }}
 {{- end -}}
 
 {{- define "fedops.publicUrl" -}}
+{{- if .root.Values.access.singleOrigin -}}
+{{- $path := index (dict "managerHost" "/fedops/services/manager" "performanceHost" "/fedops/services/performance" "registryHost" "/fedops/services/registry") .host | default "" -}}
+{{- printf "%s://%s%s" .root.Values.access.scheme .root.Values.access.webHost $path -}}
+{{- else -}}
 {{- printf "%s://%s" .root.Values.access.scheme (index .root.Values.access .host) -}}
+{{- end -}}
 {{- end -}}
 
 {{- define "fedops.claim" -}}

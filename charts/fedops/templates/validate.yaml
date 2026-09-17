@@ -2,8 +2,15 @@
 {{- fail "namespace + release name must be at most 39 characters (resource name suffixes)" -}}
 {{- end -}}
 {{- $hosts := list .Values.access.webHost .Values.access.managerHost .Values.access.performanceHost .Values.access.registryHost .Values.access.objectsHost -}}
-{{- if ne (len (uniq $hosts)) 5 -}}
+{{- if and (not .Values.access.singleOrigin) (ne (len (uniq $hosts)) 5) -}}
 {{- fail "access HTTP hosts must be distinct; objects require an unmodified S3 host/path" -}}
+{{- end -}}
+{{- if .Values.access.singleOrigin -}}
+{{- range $key := list "modelBucket" "xaiBucket" "registryLlmsBucket" "registryTasksBucket" "registryModelsBucket" -}}
+{{- if has (index $.Values.storage $key) (list "fedops" "socket.io") -}}
+{{- fail "singleOrigin storage buckets must not collide with fedops or socket.io routes" -}}
+{{- end -}}
+{{- end -}}
 {{- end -}}
 {{- range $suffix := list "web" "manager-http" "performance-http" "registry-http" "minio-http" -}}
 {{- if eq $.Values.istio.taskVirtualServiceName (printf "%s-%s" $.Release.Name $suffix) -}}

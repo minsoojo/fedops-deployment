@@ -1,6 +1,6 @@
 # FedOps 온프레미스 Chart 구성·설정 안내
 
-2026-09-16 · Chart 0.1.0 · 기존 FedOps를 F 단일 노드에 새 데이터로 설치하기 위한 최소 구성.
+2026-09-16 · Chart 0.1.1 · 기존 FedOps를 F 단일 노드에 새 데이터로 설치하기 위한 최소 구성.
 
 **현재 완료: Chart 정적 검증, 앱 6종 빌드·기동·Docker Hub 게시/digest 대조, Web SDK의 로컬 MinIO 왕복.** [이미지 기록](../../README.md). Task Runtime 연결·F 설치/FL 검증은 남아 있다. `values.yaml`의 앱 이미지·F 입력은 의도적으로 비어 있다. 실제 F 값 파일 뒤에 [게시 이미지 설정](examples/images-minsoojo.yaml)을 덧씌워 사용하며 `fedops-registry-pull` Secret은 해당 namespace에 준비해야 한다. `tests/static-values.yaml`은 존재하지 않는 주소를 사용하는 정적 검사 전용 파일이다.
 
@@ -17,11 +17,11 @@
 | ServiceAccount/Role/RoleBinding | Manager의 namespace API 호출 |
 | ClusterRole/ClusterRoleBinding | Manager의 전역 PV API 호출만 허용 |
 | Istio Gateway 1개 | HTTP 또는 HTTPS, 기본 FL TCP 40026~40039 listener |
-| HTTP VirtualService 5개 | Web·Manager·Performance·Registry·MinIO S3 API 접속 |
+| HTTP VirtualService | 기본 도메인 모드 5개, 단일 주소 모드 1개 |
 
-총 42개 자원. Task·legacy Job·Task PVC·Task VirtualService는 Manager 소유다. 기존 운영 Task 7개, 테스트 Web, 오래된 sharded Mongo 리소스는 기본 Chart에 복제하지 않는다.
+기본 모드 42개, `access.singleOrigin=true` 모드 38개 자원. Task·legacy Job·Task PVC·Task VirtualService는 Manager 소유다. 기존 운영 Task 7개, 테스트 Web, 오래된 sharded Mongo 리소스는 기본 Chart에 복제하지 않는다.
 
-별도 준비: Kubernetes/containerd/Calico, Istio base/istiod/**ingress Deployment와 LoadBalancer Service**, MetalLB와 예약 IP 풀, DNS/hosts, Namespace, 신규 Secrets, F 디렉터리, 버킷/앱 자격. Chart가 이 기반 환경을 자동 설치하지 않는다.
+별도 준비: Kubernetes/containerd/Calico, Istio base/istiod/**ingress Deployment와 LoadBalancer Service**, MetalLB와 예약 IP 풀, 도메인 모드의 DNS/hosts, Namespace, 신규 Secrets, F 디렉터리, 버킷/앱 자격. Chart가 이 기반 환경을 자동 설치하지 않는다.
 
 기본 9개 앱 Service는 ClusterIP이며 외부 접근을 Istio로 모은다. 기존 Task Service의 LoadBalancer 동작은 그대로다. 따라서 최소 LB 입력은 Istio ingress 1개 + 동시 Task 수이다.
 
@@ -34,6 +34,7 @@
 | `nodeName` | F의 `kubernetes.io/hostname` label 값. 기본 Pod·local PV nodeAffinity·Manager Task 노드 설정에 공통 전달 |
 | `images.*` | 앱/제품/Task 이미지 전체 주소. 명시적 tag 또는 sha256 digest 필수; `latest` 거부 |
 | `imagePullSecrets` | 기본 앱 Pod의 이미지 pull Secret 이름 목록. Task에 자동 전파되지 않음 |
+| `access.singleOrigin` | 기본 false. true이면 webHost 하나에서 경로로 서비스 구분; 보조 HTTP host 4개는 무시되고 빈 값 가능 |
 | `access.scheme` | `http`(80) 또는 `https`(443). HTTPS는 별도 인증서 Secret 필요 |
 | `access.webHost` | 브라우저 Web/API/Socket/SSE 접속 host. UI prefix `/fedops` 유지 |
 | `access.managerHost`, `performanceHost` | 클러스터 밖 FL Client가 사용하는 각 서비스 host |
@@ -53,7 +54,7 @@
 | `workloads.*` | 해당 이미지의 workingDir/command·resources·Pod/container securityContext. 기본값은 실행 명세의 경로 계약 |
 | `redis.*` | 같은 Gateway Pod의 Redis resources/securityContext |
 
-5개 HTTP host는 서로 달라야 한다. DNS가 없으면 접속하는 브라우저·Client의 hosts 설정으로 같은 F ingress IP를 가리킬 수 있다. `flHost`는 그 ingress의 도달 가능한 host/IP를 사용한다. 이름과 IP의 실제 배정은 아직 확인하지 않았다.
+기본 도메인 모드에서는 5개 HTTP host가 서로 달라야 한다. DNS가 없으면 접속하는 브라우저·Client의 hosts 설정으로 같은 F ingress IP를 가리킬 수 있다. `flHost`는 그 ingress의 도달 가능한 host/IP를 사용한다. F 테스트에는 임시 IP 192.9.201.220을 사용한다.
 
 내부 URL은 기존 Service 이름과 release namespace를 사용해 자동 생성한다. 사용자가 동일한 내부 주소를 여러 번 입력하지 않는다. 예: `FL_SERVER_MANAGER_URL=http://server-manager-service.<namespace>.svc.cluster.local:8000`.
 
@@ -119,3 +120,18 @@ python -B charts/fedops/tests/verify_chart.py
 검증 도구·공식 스키마 확보 방법과 결과는 [검증 기록](../../README.md)에 있다. Helm template 결과는 실제 클러스터 admission·설치·통신 검증을 대신하지 않는다.
 
 다음은 Task Runtime 패키지 연결이다. 이후 F 전용 context·신규 Secret·디렉터리·버킷·기반 네트워크를 확인한 설치 가이드를 작성한다. 앱 이미지 게시·원격 digest 대조는 완료했고 F 설치 명령은 실행하지 않았다.
+
+## 기기별 설정 없는 IP 접속
+
+F 값과 이미지 overlay 뒤에 [f-ip-access.yaml](examples/f-ip-access.yaml)을 추가한다.
+`http://192.9.201.220/fedops/`로 접속하며 Studio에는 `http://192.9.201.220/fedops`를 등록한다.
+접속 기기는 해당 IP로 네트워크 통신이 가능해야 한다. hosts 수정이나 Lens 포워딩은 필요 없다.
+
+- Web/API/Socket은 같은 origin이다.
+- `/fedops/services/{manager,performance,registry}`는 내부 서비스 전달 시 접두사를 제거한다.
+- 설정된 5개 bucket의 `/bucket` 및 `/bucket/...`는 Host/경로/query 변경 없이 MinIO로 전달한다.
+- Web `/fedops/registry` 화면과 `/fedops/objects` 다운로드 프록시는 유지한다.
+- MinIO Console/루트 ListBuckets, Mailpit UI, 외부 인터넷 연결은 이 진입점에 포함하지 않는다.
+- 단일 주소 모드에서는 기존 보조 도메인 VirtualService를 만들지 않는다. `webHost`가 HTTP 진입 주소다.
+- ConfigMap checksum이 모든 기본 Deployment에 연결되어 있어 적용 시 앱/DB Pod들이 교체된다.
+  기존 PV/PVC와 Secret은 그대로 사용한다. 실제 배포 후 Ready와 로그인/파일 다운로드를 확인한다.
