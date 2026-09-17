@@ -65,6 +65,11 @@ data:
   SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH: {{ $.Values.smtp.auth | quote }}
   SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE: {{ $.Values.smtp.starttls | quote }}
   SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_REQUIRED: {{ $.Values.smtp.starttlsRequired | quote }}
+  SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_ENABLE: {{ $.Values.smtp.ssl | quote }}
+  {{- if $.Values.smtp.fromAddress }}
+  FEDOPS_MAIL_FROM_ADDRESS: {{ $.Values.smtp.fromAddress | quote }}
+  {{- end }}
+  FEDOPS_MAIL_FROM_NAME: {{ $.Values.smtp.fromName | quote }}
   SPRING_DATA_REDIS_HOST: "127.0.0.1"
   SPRING_DATA_REDIS_PORT: "6379"
   {{- else if eq $role "registry" }}

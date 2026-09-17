@@ -1,0 +1,30 @@
+{
+  "checkedAtUTC": "2026-09-17T05:39:26.810207+00:00",
+  "command": "python -B work/verify_gateway_mail.py",
+  "image": "fedops-local/gateway:mail-config-20260917",
+  "scope": "Isolated Docker Gateway/Redis/Mailpit; external SMTP and F not used",
+  "profiles": 3,
+  "checks": [
+    "explicit sender",
+    "UTF-8 sender name",
+    "username fallback",
+    "SMTP reception",
+    "correct code accepted",
+    "wrong code rejected",
+    "Redis TTL 30 minutes"
+  ],
+  "passed": true,
+  "sourceCommit": "964ede9d32ffe10ae2e35ad7551d9b4d96ccb8f4",
+  "tag": "docker.io/minsoojo/fedops-onprem:gateway-mail-config-20260917",
+  "digest": "sha256:42b21b3c35760d40c402095d5fd6e38daba3d3cf03c7fdb6bffe94eaa636f92e",
+  "gradleTestAndBootJar": "passed",
+  "javaTestMethods": 4,
+  "buildCommand": "docker --context desktop-linux build --platform linux/amd64 --progress plain -t fedops-local/gateway:mail-config-20260917 work/mail-gateway-context",
+  "sha256": {
+    "work/verify_gateway_mail.py": "84cbaff09ac44d772caa3e6baf6a223ba92ef723680d83bf16e9341254c5c94e",
+    "repositories/fedops-gateway-onprem/src/main/java/com/example/mailauth/service/MailService.java": "d7c714241b5b27a9e6481afc9cd79e2b28aec8bb46f1c33ddd8c44825650ce79",
+    "repositories/fedops-gateway-onprem/src/main/java/com/example/mailauth/config/EmailConfig.java": "fe7be1a2a0ba278fe8e9a126b2bbd4cc1aae64801a41e92bebc0a9871bf825fc",
+    "repositories/fedops-gateway-onprem/src/main/resources/application.yml": "4d9f016f8c6e3872fca032aaa752ef763615acb00e8c650ddc339e373a08c081"
+  },
+  "publishedDigestPullMatchesLocal": true
+}

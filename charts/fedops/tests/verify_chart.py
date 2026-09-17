@@ -176,6 +176,15 @@ def main():
     check(not any("*" in r["verbs"] or "*" in r["resources"] or "secrets" in r["resources"] for r in by_kind["Role"][0]["rules"]), "no wildcard/Secret-reading Manager RBAC")
 
     # A different release/environment must flow through references and browser config.
+    mail = render(["-f", CHART / "examples/f-test-mail.yaml"])
+    mail_config = next(d["data"] for d in mail if d["kind"] == "ConfigMap" and d["metadata"]["name"] == "fedops-gateway")
+    check(mail_config["FEDOPS_MAIL_FROM_ADDRESS"] == "noreply@fedops.test", "explicit sender address injected")
+    check(mail_config["FEDOPS_MAIL_FROM_NAME"] == "FedOps Test", "sender name injected")
+    check(mail_config["SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_ENABLE"] == "false", "test SMTP is plaintext")
+    check("FEDOPS_MAIL_FROM_ADDRESS" not in cms["fedops-gateway"], "empty sender uses existing Secret username fallback")
+    implicit_tls = render(["--set", "smtp.port=465,smtp.ssl=true,smtp.starttls=false,smtp.starttlsRequired=false"])
+    tls_mail = next(d["data"] for d in implicit_tls if d["kind"] == "ConfigMap" and d["metadata"]["name"] == "fedops-gateway")
+    check(tls_mail["SPRING_MAIL_PROPERTIES_MAIL_SMTP_SSL_ENABLE"] == "true", "implicit SMTP TLS enabled")
     single = render(["-f", CHART / "examples/f-ip-access.yaml"])
     validate_all(single)
     single_vs = [d for d in single if d["kind"] == "VirtualService"]
@@ -227,6 +236,9 @@ def main():
         "duplicate HTTP hosts": "access.objectsHost=web.example.invalid",
         "empty legacy host": "access.objectsHost=",
         "single origin bucket collision": "access.singleOrigin=true,storage.modelBucket=fedops",
+        "conflicting SMTP TLS": "smtp.ssl=true",
+        "required SMTP TLS disabled": "smtp.starttls=false",
+        "invalid mail sender": "smtp.fromAddress=root",
         "reversed port range": "task.portMin=41000,task.portMax=40000",
         "oversized port range": "task.portMin=40000,task.portMax=40200",
         "missing TLS reference": "access.scheme=https",

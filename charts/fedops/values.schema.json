@@ -348,6 +348,31 @@
         },
         "starttlsRequired": {
           "type": "boolean"
+        },
+        "ssl": {
+          "type": "boolean"
+        },
+        "fromAddress": {
+          "type": "string",
+          "maxLength": 254,
+          "anyOf": [
+            {
+              "const": ""
+            },
+            {
+              "pattern": "^[^\\s<>(),;:@]+@[^\\s<>(),;:@]+\\.[^\\s<>(),;:@]+$"
+            }
+          ],
+          "not": {
+            "pattern": "[\r\n]"
+          }
+        },
+        "fromName": {
+          "type": "string",
+          "maxLength": 200,
+          "not": {
+            "pattern": "[\r\n]"
+          }
         }
       },
       "required": [

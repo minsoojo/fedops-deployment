@@ -9,7 +9,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -23,7 +23,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -37,7 +37,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -51,7 +51,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -65,7 +65,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -79,7 +79,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -93,7 +93,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -107,7 +107,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -123,7 +123,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -139,7 +139,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -155,7 +155,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -172,7 +172,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -189,7 +189,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -206,7 +206,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -250,7 +250,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -264,7 +264,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -278,7 +278,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -292,7 +292,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -306,7 +306,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -320,7 +320,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -334,7 +334,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -348,7 +348,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -362,7 +362,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -376,7 +376,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -390,7 +390,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -404,7 +404,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -418,7 +418,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -432,7 +432,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -446,7 +446,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -460,7 +460,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -474,7 +474,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -488,7 +488,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },
@@ -502,7 +502,7 @@
         "app.kubernetes.io/part-of": "fedops",
         "app.kubernetes.io/instance": "fedops",
         "app.kubernetes.io/managed-by": "Helm",
-        "helm.sh/chart": "fedops-0.1.1"
+        "helm.sh/chart": "fedops-0.1.2"
       }
     }
   },

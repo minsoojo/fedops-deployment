@@ -20,7 +20,7 @@
   {
     "name": "fedops-gateway-onprem",
     "url": "https://github.com/minsoojo/fedops-gateway-onprem",
-    "commit": "e64d3bee896264ce9e0ce9de71a15fc76b4e2088",
+    "commit": "964ede9d32ffe10ae2e35ad7551d9b4d96ccb8f4",
     "private": true
   },
   {

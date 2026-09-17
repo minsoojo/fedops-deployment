@@ -2,6 +2,9 @@
 {{- fail "namespace + release name must be at most 39 characters (resource name suffixes)" -}}
 {{- end -}}
 {{- $hosts := list .Values.access.webHost .Values.access.managerHost .Values.access.performanceHost .Values.access.registryHost .Values.access.objectsHost -}}
+{{- if or (and .Values.smtp.ssl (or .Values.smtp.starttls .Values.smtp.starttlsRequired)) (and .Values.smtp.starttlsRequired (not .Values.smtp.starttls)) -}}
+{{- fail "smtp: choose SSL or STARTTLS; starttlsRequired requires starttls" -}}
+{{- end -}}
 {{- if and (not .Values.access.singleOrigin) (ne (len (uniq $hosts)) 5) -}}
 {{- fail "access HTTP hosts must be distinct; objects require an unmodified S3 host/path" -}}
 {{- end -}}

@@ -1,6 +1,6 @@
 # FedOps 온프레미스 Chart 구성·설정 안내
 
-2026-09-16 · Chart 0.1.1 · 기존 FedOps를 F 단일 노드에 새 데이터로 설치하기 위한 최소 구성.
+2026-09-16 · Chart 0.1.2 · 기존 FedOps를 F 단일 노드에 새 데이터로 설치하기 위한 최소 구성.
 
 **현재 완료: Chart 정적 검증, 앱 6종 빌드·기동·Docker Hub 게시/digest 대조, Web SDK의 로컬 MinIO 왕복.** [이미지 기록](../../README.md). Task Runtime 연결·F 설치/FL 검증은 남아 있다. `values.yaml`의 앱 이미지·F 입력은 의도적으로 비어 있다. 실제 F 값 파일 뒤에 [게시 이미지 설정](examples/images-minsoojo.yaml)을 덧씌워 사용하며 `fedops-registry-pull` Secret은 해당 namespace에 준비해야 한다. `tests/static-values.yaml`은 존재하지 않는 주소를 사용하는 정적 검사 전용 파일이다.
 
@@ -49,7 +49,7 @@
 | `persistence.*` | 역할별 경로·용량 또는 기존 PVC 이름. 새 디렉터리 작성·권한 설정은 설치 전 사용자 수행 |
 | `storage.*` | 모델/XAI/Registry 버킷 이름과 region. 신규 MinIO에도 같은 region 전달 |
 | `secrets.*` | 아래 키를 가진 신규 Secret 이름 |
-| `smtp.*` | SMTP host/port·auth/STARTTLS 설정. 실제 SMTP 전달 가능 여부는 별도 검증 |
+| `smtp.*` | SMTP host/port·auth·STARTTLS/SSL·발신 주소/표시명. 실제 외부 메일 수신은 별도 검증 |
 | `frontend.runtimeConfigPath` | 앱 이미지가 제공하는 공개 설정 파일 경로. 현재 React 서버 계약은 `/app/client/public/runtime-config.js` |
 | `workloads.*` | 해당 이미지의 workingDir/command·resources·Pod/container securityContext. 기본값은 실행 명세의 경로 계약 |
 | `redis.*` | 같은 Gateway Pod의 Redis resources/securityContext |
@@ -135,3 +135,11 @@ F 값과 이미지 overlay 뒤에 [f-ip-access.yaml](examples/f-ip-access.yaml)�
 - 단일 주소 모드에서는 기존 보조 도메인 VirtualService를 만들지 않는다. `webHost`가 HTTP 진입 주소다.
 - ConfigMap checksum이 모든 기본 Deployment에 연결되어 있어 적용 시 앱/DB Pod들이 교체된다.
   기존 PV/PVC와 Secret은 그대로 사용한다. 실제 배포 후 Ready와 로그인/파일 다운로드를 확인한다.
+
+## SMTP·발신자
+
+`smtp.fromAddress`와 `smtp.fromName`이 메일 From을 결정한다. 주소가 비어 있으면 `secrets.smtp`의
+`SPRING_MAIL_USERNAME`을 사용한다. 표시명 기본값은 FedOps다. 인증 비밀번호는 `SPRING_MAIL_PASSWORD` Secret 키를 사용한다.
+`smtp.ssl=true`는 implicit TLS(주로 465), `smtp.starttls=true/starttlsRequired=true`는 STARTTLS(주로 587)다.
+두 TLS 모드를 동시에 활성화할 수 없다. 발신 주소는 SMTP 제공자가 허용한 주소여야 한다.
+[F 테스트 메일](examples/f-test-mail.yaml)과 [원본 Gmail 방식](examples/smtp-gmail.yaml) overlay를 제공한다.

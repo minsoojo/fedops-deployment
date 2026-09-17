@@ -1,5 +1,7 @@
 # FedOps 온프레미스 배포
 
+**메일 설정 후속(Chart 0.1.2):** 원본 Gateway→SMTP/Redis 흐름을 유지하며 서버·포트·인증·TLS·발신자 주소/이름을 Helm에서 설정한다. [SMTP 가이드](SMTP_CONFIGURATION.md) · [계획](MAIL_CONFIG_PLAN.md) · [검증](verification/gateway-mail.json). 기존 F IP 접속은 revision 3에 적용 완료됐으며, SMTP 후속은 현재 게시 후 적용 단계다.
+
 **최신 후속(2026-09-17): Chart 0.1.1 IP 접속 지원.** `http://192.9.201.220/fedops/`를 해당 IP에 접근 가능한 기기에서 hosts/Lens 설정 없이 사용한다. [F 적용 명령](F_IP_ACCESS.md) · [계획/결과](IP_ACCESS_PLAN.md) · [로컬 검증](verification/ip-access-integration.json). 기존 도메인 모드는 옵션으로 유지하며 F용 마지막 overlay에서 IP 모드를 선택한다. F 적용과 새 기기의 실제 브라우저 확인은 아직 남아 있다.
 
 Chart 및 별도 소스 저장소의 고정 commit을 관리합니다. 기존 upstream의 전체 Git 이력이 아닌 정제 전달본에서 시작한 새 저장소입니다.
@@ -42,7 +44,7 @@ deployed 확인 후 Lens에서 기존 포워딩을 닫고 `fedops-web-frontend-s
 | [fedops-core-onprem](https://github.com/minsoojo/fedops-core-onprem) | `ff5f44ddea2705c8d901a54a0272f517822da8f4` |
 | [fedops-web-onprem](https://github.com/minsoojo/fedops-web-onprem) | `1613311e8bb2b094769aaa29494bc2525403e983` |
 | [fedops-server-onprem](https://github.com/minsoojo/fedops-server-onprem) | `c39aa34c460d46055035d055766d002504eb7818` |
-| [fedops-gateway-onprem](https://github.com/minsoojo/fedops-gateway-onprem) | `e64d3bee896264ce9e0ce9de71a15fc76b4e2088` |
+| [fedops-gateway-onprem](https://github.com/minsoojo/fedops-gateway-onprem) | `964ede9d32ffe10ae2e35ad7551d9b4d96ccb8f4` |
 | [fedops-registry-onprem](https://github.com/minsoojo/fedops-registry-onprem) | `548c5fbb4e0af0883d5b76fbefc2b5caecd9c63f` |
 | [fedops-agent-studio-onprem](https://github.com/minsoojo/fedops-agent-studio-onprem) | `3a66538f33b720641d80f742a8dfe672db2c0c2a` |
 | [fedops-silo-baseline-onprem](https://github.com/minsoojo/fedops-silo-baseline-onprem) | `eb54b25473e387c50b343c9382bdad74e297c3a6` |

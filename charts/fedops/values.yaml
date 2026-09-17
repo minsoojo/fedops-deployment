@@ -80,6 +80,10 @@ smtp:
   auth: true
   starttls: true
   starttlsRequired: true
+  ssl: false
+  # Empty address uses SPRING_MAIL_USERNAME from secrets.smtp.
+  fromAddress: ""
+  fromName: FedOps
 
 # Paths are a contract for the stage-3 app images, not existing ready images.
 frontend:
